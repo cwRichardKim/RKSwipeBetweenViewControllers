@@ -9,15 +9,15 @@
 #import "RKScrollingSegmentedControl.h"
 
 //%%% customizeable button attributes
-#define X_BUFFER 10 //%%% the number of pixels on either side of the segment
+#define X_BUFFER 0 //%%% the number of pixels on either side of the segment
 #define Y_BUFFER 14 //%%% number of pixels on top of the segment
 #define HEIGHT 30 //%%% height of the segment
 
 //%%% customizeable selector bar attributes (the black bar under the buttons)
 #define BOUNCE_BUFFER 10 //%%% adds bounce to the selection bar when you scroll
 #define ANIMATION_SPEED 0.2 //%%% the number of seconds it takes to complete the animation
-#define SELECTOR_Y_BUFFER 14 //%%% the y-value of the bar that shows what page you are on (0 is the top)
-#define SELECTOR_HEIGHT 30 //%%% thickness of the selector bar
+#define SELECTOR_Y_BUFFER 40 //%%% the y-value of the bar that shows what page you are on (0 is the top)
+#define SELECTOR_HEIGHT 4 //%%% thickness of the selector bar
 
 @interface RKScrollingSegmentedControl () {
     UIPageViewController *pageController;
@@ -45,10 +45,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
+    self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
     currentPageIndex = 0;
     
     // Do any additional setup after loading the view.
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -84,13 +90,6 @@
 {
     NSInteger numControllers = [viewControllerArray count];
     
-    //%%%%%%%%%%%% buttoncolors this takes the color of your viewcontrollers and puts them in an array.  You may want to do something different here
-    NSMutableArray *colors = [[NSMutableArray alloc]init];
-    for (UIViewController* viewController in viewControllerArray) {
-        [colors addObject:viewController.view.backgroundColor];
-    }
-    //%%%%%%%%%%%%% buttoncolors
-    
     NSArray *buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%% buttontext
     
     
@@ -99,7 +98,7 @@
         [self.navigationBar addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-        button.backgroundColor = [colors objectAtIndex:i];//%%% buttoncolors
+        button.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];//%%% buttoncolors
         
         [button addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -113,13 +112,13 @@
 -(void)setupSelector
 {
     selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER, SELECTOR_Y_BUFFER,(self.view.frame.size.width-2*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
-    selectionBar.backgroundColor = [UIColor blackColor]; //%%% sbcolor
-    selectionBar.alpha = 0.5; //%%% sbalpha
+    selectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor
+    selectionBar.alpha = 0.8; //%%% sbalpha
     [self.navigationBar addSubview:selectionBar];
     
     manualSelectionBar = [[UIView alloc]initWithFrame:selectionBar.frame];
-    manualSelectionBar.backgroundColor = [UIColor blackColor]; //%%% sbcolor (moving)
-    manualSelectionBar.alpha = 0.2; //%%% msbalpha
+    manualSelectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor (moving)
+    manualSelectionBar.alpha = 0.5; //%%% msbalpha
     manualSelectionBar.hidden = YES;
     [self.navigationBar addSubview:manualSelectionBar];
 }
