@@ -21,6 +21,7 @@
  - button text                          buttontext
  - further button customization         top of the .m (multiple attributes)
  - individual button customization      customb
+ - bar tint color                       bartint
  
  want anything anything else? Feel free to contact me at cwrichardkim@gmail.com
  
