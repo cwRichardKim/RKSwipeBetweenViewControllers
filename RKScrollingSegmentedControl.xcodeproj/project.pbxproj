@@ -20,7 +20,7 @@
 		993A28BE19804DD900B9F8F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A28A019804DD900B9F8F0 /* UIKit.framework */; };
 		993A28C619804DD900B9F8F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 993A28C419804DD900B9F8F0 /* InfoPlist.strings */; };
 		993A28C819804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28C719804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m */; };
-		993A28D319804E1A00B9F8F0 /* RKScrollingSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28D219804E1A00B9F8F0 /* RKScrollingSegmentedControl.m */; };
+		993A28D319804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28D219804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		993A28C319804DD900B9F8F0 /* RKScrollingSegmentedControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKScrollingSegmentedControlTests-Info.plist"; sourceTree = "<group>"; };
 		993A28C519804DD900B9F8F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		993A28C719804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKScrollingSegmentedControlTests.m; sourceTree = "<group>"; };
-		993A28D119804E1A00B9F8F0 /* RKScrollingSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKScrollingSegmentedControl.h; sourceTree = SOURCE_ROOT; };
-		993A28D219804E1A00B9F8F0 /* RKScrollingSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKScrollingSegmentedControl.m; sourceTree = SOURCE_ROOT; };
+		993A28D119804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSwipeBetweenViewControllers.h; sourceTree = SOURCE_ROOT; };
+		993A28D219804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllers.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 				993A28AC19804DD900B9F8F0 /* AppDelegate.m */,
 				993A28AE19804DD900B9F8F0 /* Main.storyboard */,
 				993A28B419804DD900B9F8F0 /* Images.xcassets */,
-				993A28D119804E1A00B9F8F0 /* RKScrollingSegmentedControl.h */,
-				993A28D219804E1A00B9F8F0 /* RKScrollingSegmentedControl.m */,
+				993A28D119804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.h */,
+				993A28D219804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m */,
 				993A28A319804DD900B9F8F0 /* Supporting Files */,
 			);
 			path = RKScrollingSegmentedControl;
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A28D319804E1A00B9F8F0 /* RKScrollingSegmentedControl.m in Sources */,
+				993A28D319804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m in Sources */,
 				993A28AD19804DD900B9F8F0 /* AppDelegate.m in Sources */,
 				993A28A919804DD900B9F8F0 /* main.m in Sources */,
 			);
@@ -456,6 +456,7 @@
 				993A28CD19804DD900B9F8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		993A28CE19804DD900B9F8F0 /* Build configuration list for PBXNativeTarget "RKScrollingSegmentedControlTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				993A28D019804DD900B9F8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

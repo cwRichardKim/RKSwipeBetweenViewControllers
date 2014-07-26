@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  RKScrollingSegmentedControl
+//  RKSwipeBetweenViewControllers
 //
 //  Created by Richard Kim on 7/24/14.
 //  Copyright (c) 2014 Richard Kim. All rights reserved.

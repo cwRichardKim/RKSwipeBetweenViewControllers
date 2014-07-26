@@ -1,6 +1,6 @@
 //
-//  RKScrollingSegmentedControl.h
-//  RKScrollingSegmentedControl
+//  RKSwipeBetweenViewControllers.h
+//  RKSwipeBetweenViewControllers
 //
 //  Created by Richard Kim on 7/24/14.
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
@@ -53,7 +53,7 @@
  */
 
 
-@protocol RKScrollingSegmentedControlDelegate <NSObject>
+@protocol RKSwipeBetweenViewControllersDelegate <NSObject>
 
 @end
 
@@ -61,10 +61,10 @@
 
 
 
-@interface RKScrollingSegmentedControl : UINavigationController <UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate>
+@interface RKSwipeBetweenViewControllers : UINavigationController <UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *viewControllerArray;
-@property (nonatomic, weak) id<RKScrollingSegmentedControlDelegate> navDelegate;
+@property (nonatomic, weak) id<RKSwipeBetweenViewControllersDelegate> navDelegate;
 @property (nonatomic, strong) UIView *selectionBar;
 @property (nonatomic, strong) UIView *manualSelectionBar;
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;

@@ -1,6 +1,6 @@
 //
-//  RKScrollingSegmentedControlTests.m
-//  RKScrollingSegmentedControlTests
+//  RKSwipeBetweenViewControllersTests.m
+//  RKSwipeBetweenViewControllersTests
 //
 //  Created by Richard Kim on 7/24/14.
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface RKScrollingSegmentedControlTests : XCTestCase
+@interface RKSwipeBetweenViewControllersTests : XCTestCase
 
 @end
 
-@implementation RKScrollingSegmentedControlTests
+@implementation RKSwipeBetweenViewControllersTests
 
 - (void)setUp
 {

@@ -1,12 +1,12 @@
 //
-//  RKScrollingSegmentedControl.m
-//  RKScrollingSegmentedControl
+//  RKSwipeBetweenViewControllers.m
+//  RKSwipeBetweenViewControllers
 //
 //  Created by Richard Kim on 7/24/14.
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
 //
 
-#import "RKScrollingSegmentedControl.h"
+#import "RKSwipeBetweenViewControllers.h"
 
 //%%% customizeable button attributes
 #define X_BUFFER 0 //%%% the number of pixels on either side of the segment
@@ -19,7 +19,7 @@
 #define SELECTOR_Y_BUFFER 40 //%%% the y-value of the bar that shows what page you are on (0 is the top)
 #define SELECTOR_HEIGHT 4 //%%% thickness of the selector bar
 
-@interface RKScrollingSegmentedControl () {
+@interface RKSwipeBetweenViewControllers () {
     UIPageViewController *pageController;
     UIScrollView *pageScrollView;
     NSInteger currentPageIndex;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation RKScrollingSegmentedControl
+@implementation RKSwipeBetweenViewControllers
 @synthesize viewControllerArray;
 @synthesize selectionBar;
 @synthesize panGestureRecognizer;

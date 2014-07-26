@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  RKScrollingSegmentedControl
+//  RKSwipeBetweenViewControllers
 //
 //  Created by Richard Kim on 7/24/14.
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "RKScrollingSegmentedControl.h"
+#import "RKSwipeBetweenViewControllers.h"
 
 @implementation AppDelegate
 
@@ -19,7 +19,7 @@
     
     UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
-    RKScrollingSegmentedControl *navigationController = [[RKScrollingSegmentedControl alloc]initWithRootViewController:pageController];
+    RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
     
     
     //%%% DEMO CONTROLLERS
