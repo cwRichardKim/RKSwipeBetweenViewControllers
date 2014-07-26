@@ -16,7 +16,7 @@ Don't worry about the colors, it's easy to change that to suit your own preferen
 
 
 ## Customizeable!:
-![Customizeable!](http://i.imgur.com/sfjGYcr.gif)
+![Customizeable!](http://i.imgur.com/dl422EL.gif)
 
 check the RKScrollingSegmentedControl.h for more customizeable features
 
