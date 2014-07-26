@@ -8,11 +8,33 @@
 
 #import "AppDelegate.h"
 
+#import "RKScrollingSegmentedControl.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    RKScrollingSegmentedControl *navigationController = [[RKScrollingSegmentedControl alloc]initWithRootViewController:pageController];
+    
+    
+    //%%% DEMO CONTROLLERS
+    UIViewController *demo = [[UIViewController alloc]init];
+    UITableViewController *demo2 = [[UITableViewController alloc]init];
+    UIViewController *demo3 = [[UIViewController alloc]init];
+    UIViewController *demo4 = [[UIViewController alloc]init];
+    demo.view.backgroundColor = [UIColor redColor];
+    demo2.view.backgroundColor = [UIColor blueColor];
+    demo3.view.backgroundColor = [UIColor greenColor];
+    demo4.view.backgroundColor = [UIColor yellowColor];
+    [navigationController.viewControllerArray addObjectsFromArray:@[demo,demo2,demo3]];
+    
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

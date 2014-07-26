@@ -6,6 +6,12 @@
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
 //
 
+/*
+ scrolling too fast is a little janky
+ 
+ */
+
+
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
