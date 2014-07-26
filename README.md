@@ -1,4 +1,4 @@
-RKScrollingSegmentedControl
+RKSwipeBetweenViewControllers
 ===========================
 
 UIPageViewController and custom UISegmentedControl synchronized and animated.  Similar to Spotify's "My Music" section.
@@ -18,24 +18,24 @@ Don't worry about the colors, it's easy to change that to suit your own preferen
 ## Customizeable!:
 ![Customizeable!](http://i.imgur.com/dl422EL.gif)
 
-check the RKScrollingSegmentedControl.h for more customizeable features
+check the RKSwipeBetweenViewControllers.h for more customizeable features
 
 ## how to use 
 (check out the provided AppDelegate to see an example):
 
 __Programmatically__
 
-1. Import RKScrollingSegmentedControl.h
+1. Import RKSwipeBetweenViewControllers.h
 
 2. Initialize a UIPageViewController
 	
 	```
 	UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	```
-3. Initialize a RKScrollingSegmentedControl
+3. Initialize a RKSwipeBetweenViewControllers
 
   	```
-	RKScrollingSegmentedControl *navigationController = [[RKScrollingSegmentedControl alloc]initWithRootViewController:pageController];
+	RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
 	```
 4. Add all your ViewControllers (in order) to navigationController.viewControllerArray (try to keep it under 5)
   	
@@ -52,7 +52,7 @@ __Programmatically__
   
 __StoryBoard__
 
-1. Embed a UIPageViewController inside a UINavigationController.  Change the class of the to UINavigationController the custom class (RKScrollingSegmentedControl)
+1. Embed a UIPageViewController inside a UINavigationController.  Change the class of the to UINavigationController the custom class (RKSwipeBetweenViewControllers)
 
 2. add your viewcontrollers to viewControllerArray like in step 4 (above)
 
