@@ -5,6 +5,8 @@ UIPageViewController and custom UISegmentedControl synchronized and animated.  S
 
 In Progress: a CocoaPod version
 
+__Please check the .h to see how to customize anything__
+
 ## Demo (what you get): 
 Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
 
