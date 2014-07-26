@@ -5,7 +5,8 @@ UIPageViewController and custom UISegmentedControl synchronized and animated.  S
 
 In Progress: a CocoaPod version
 
-## Demo (what you get): Don't worry about the colors or the ugly buttons, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
+## Demo (what you get): 
+Don't worry about the colors or the ugly buttons, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
 ![demo](http://i.imgur.com/sfjGYcr.gif)
 
 
@@ -14,7 +15,7 @@ In Progress: a CocoaPod version
 
 
 ## Customizeable!:
-![Customizeable](http://imgur.com/QeKGdqJ,sfjGYcr,dl422EL#2)
+![Customizeable](http://i.imgur.com/dl422EL.gif)
 check the RKScrollingSegmentedControl.h for more customizeable features
 
 ## how to use 
