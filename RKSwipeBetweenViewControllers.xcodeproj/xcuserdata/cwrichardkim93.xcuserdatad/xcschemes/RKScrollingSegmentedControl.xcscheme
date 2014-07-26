@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "993A289819804DD900B9F8F0"
-               BuildableName = "RKScrollingSegmentedControl.app"
-               BlueprintName = "RKScrollingSegmentedControl"
-               ReferencedContainer = "container:RKScrollingSegmentedControl.xcodeproj">
+               BuildableName = "RKSwipeBetweenViewControllers.app"
+               BlueprintName = "RKSwipeBetweenViewControllers"
+               ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "993A28B919804DD900B9F8F0"
-               BuildableName = "RKScrollingSegmentedControlTests.xctest"
-               BlueprintName = "RKScrollingSegmentedControlTests"
-               ReferencedContainer = "container:RKScrollingSegmentedControl.xcodeproj">
+               BuildableName = "RKSwipeBetweenViewControllersTests.xctest"
+               BlueprintName = "RKSwipeBetweenViewControllersTests"
+               ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "993A289819804DD900B9F8F0"
-            BuildableName = "RKScrollingSegmentedControl.app"
-            BlueprintName = "RKScrollingSegmentedControl"
-            ReferencedContainer = "container:RKScrollingSegmentedControl.xcodeproj">
+            BuildableName = "RKSwipeBetweenViewControllers.app"
+            BlueprintName = "RKSwipeBetweenViewControllers"
+            ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "993A289819804DD900B9F8F0"
-            BuildableName = "RKScrollingSegmentedControl.app"
-            BlueprintName = "RKScrollingSegmentedControl"
-            ReferencedContainer = "container:RKScrollingSegmentedControl.xcodeproj">
+            BuildableName = "RKSwipeBetweenViewControllers.app"
+            BlueprintName = "RKSwipeBetweenViewControllers"
+            ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "993A289819804DD900B9F8F0"
-            BuildableName = "RKScrollingSegmentedControl.app"
-            BlueprintName = "RKScrollingSegmentedControl"
-            ReferencedContainer = "container:RKScrollingSegmentedControl.xcodeproj">
+            BuildableName = "RKSwipeBetweenViewControllers.app"
+            BlueprintName = "RKSwipeBetweenViewControllers"
+            ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

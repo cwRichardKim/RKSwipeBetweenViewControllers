@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>606C149A-2CB9-4ADD-AEE2-1D3A80B37BFE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RKSwipeBetweenViewControllers</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6E1844E6-E888-43BA-8EED-2A5833E5699C</key>
+		<string>https://github.com/cwRichardKim/RKScrollingSegmentedControl.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RKSwipeBetweenViewControllers.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6E1844E6-E888-43BA-8EED-2A5833E5699C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cwRichardKim/RKScrollingSegmentedControl.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6E1844E6-E888-43BA-8EED-2A5833E5699C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6E1844E6-E888-43BA-8EED-2A5833E5699C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RKScrollingSegmentedControl</string>
+		</dict>
+	</array>
+</dict>
+</plist>
