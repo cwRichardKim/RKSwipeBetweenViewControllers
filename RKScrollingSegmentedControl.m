@@ -42,50 +42,20 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
-    self.navigationBar.translucent = NO;
-    viewControllerArray = [[NSMutableArray alloc]init];
-    currentPageIndex = 0;
-    
-    // Do any additional setup after loading the view.
-}
 
+//This stuff here is customizeable
+////////////////////////////////////////////////////////////
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%    CUSTOMIZEABLE    %%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//
+
+//%%% color of the status bar
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self setupPageViewController];
-    [self setupSegmentButtons];
-}
-
-//%%% generic setup stuff for a pageview controller.  Sets up the scrolling style and delegate for the controller
--(void)setupPageViewController
-{
-    pageController = (UIPageViewController*)self.topViewController;
-    pageController.delegate = self;
-    pageController.dataSource = self;
-    [pageController setViewControllers:@[[viewControllerArray objectAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    [self syncPanGestureRecognizer];
-}
-
-//%%% finds the gesture recognizer in the UIPageViewController and syncs it to the global variable pagGestureRecognizer
--(void)syncPanGestureRecognizer
-{
-    for (UIView* view in pageController.view.subviews){
-        if([view isKindOfClass:[UIScrollView class]])
-        {
-            pageScrollView = (UIScrollView *)view;
-            pageScrollView.delegate = self;
-        }
-    }
-}
-
-//%%% sets up the segment buttons and the selection thing
+//%%% sets up the buttons at the top using a loop.  You can take appart the loop to customize individual buttons, but remember to tag the buttons.  eg: the left-most button should get button.tag=0 and the second button.tag=1, etc
 -(void)setupSegmentButtons
 {
     NSInteger numControllers = [viewControllerArray count];
@@ -93,8 +63,10 @@
     NSArray *buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%% buttontext
     
     
-    for (int i = 0; i<numControllers; i++) { //%%% customb: this loops sets up all the buttons uniformly, but you can break this down and set them up individually.  If you do so, make sure to add the appropriate tags (button associated with first viewcontroller has button.tag = 0)
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+i*(self.view.frame.size.width-2*X_BUFFER)/numControllers, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/numControllers, HEIGHT)]; //%%% creates a button and sets up the frame.  It looks complicated because I made them dynamic (this will work for ipad, landscape iphone, etc)
+    for (int i = 0; i<numControllers; i++) {
+        
+        //%%% creates a button and sets up the frame.  It looks complicated because I made them dynamic (this will work for ipad, landscape iphone, etc)
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+i*(self.view.frame.size.width-2*X_BUFFER)/numControllers, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/numControllers, HEIGHT)];
         [self.navigationBar addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
@@ -107,6 +79,7 @@
     
     [self setupSelector];
 }
+
 
 //%%% sets up the selection bar under the buttons on the navigation bar
 -(void)setupSelector
@@ -122,6 +95,64 @@
     manualSelectionBar.hidden = YES;
     [self.navigationBar addSubview:manualSelectionBar];
 }
+
+//                                                        //
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%    CUSTOMIZEABLE    %%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+////////////////////////////////////////////////////////////
+
+
+
+
+
+//generally, this shouldn't be changed unless you know what you're changing
+////////////////////////////////////////////////////////////
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%        SETUP       %%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//                                                        //                                      
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
+    self.navigationBar.translucent = NO;
+    viewControllerArray = [[NSMutableArray alloc]init];
+    currentPageIndex = 0;
+    
+    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self setupPageViewController];
+    [self setupSegmentButtons];
+}
+
+//%%% generic setup stuff for a pageview controller.  Sets up the scrolling style and delegate for the controller
+-(void)setupPageViewController
+{
+    pageController = (UIPageViewController*)self.topViewController;
+    pageController.delegate = self;
+    pageController.dataSource = self;
+    [pageController setViewControllers:@[[viewControllerArray objectAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self syncScrollView];
+}
+
+//%%% this allows us to get information back from the scrollview, namely the coordinate information that we can link to the selection bar.
+-(void)syncScrollView
+{
+    for (UIView* view in pageController.view.subviews){
+        if([view isKindOfClass:[UIScrollView class]])
+        {
+            pageScrollView = (UIScrollView *)view;
+            pageScrollView.delegate = self;
+        }
+    }
+}
+
 
 //%%% when you tap one of the buttons, it shows that page, but it also has to animate the other pages to make it feel like you're crossing a 2d expansion, so there's a loop that shows every view controller in the array up to the one you selected
 -(void)tapSegmentButtonAction:(UIButton *)button
@@ -140,12 +171,6 @@
             [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
         }
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 //%%% when you add BOUNCE_BUFFER, then the selector passes the button by a few pixels, and then this method is called to pull it back, creating a bounce effect
@@ -175,30 +200,51 @@
                      }];
 }
 
-//%%% method that returns the index of the currently viewed page in the array of view controllers
--(NSInteger)findCurrentPageIndex
-{
-    UIViewController* currentController = [pageController.viewControllers lastObject];
-    for (int i = 0; i<[viewControllerArray count]; i++) {
-        if (currentController == [viewControllerArray objectAtIndex:i]) {
-            return i;
-        }
-    }
-    return NSNotFound;
-}
-
 //%%% method is called when any of the pages moves.  It extracts the xcoordinate from the center point and instructs the selection bar to move accordingly
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat xFromCenter = pageScrollView.accessibilityFrame.origin.x*(self.view.frame.size.width-X_BUFFER*2 +BOUNCE_BUFFER)/self.view.frame.size.width; //%%% positive for right swipe, negative for left
     NSInteger xCoor = 10+selectionBar.frame.size.width*currentPageIndex;
     if (xFromCenter == 0) {
-        currentPageIndex = [self findCurrentPageIndex];
+        currentPageIndex = [self indexOfController:[pageController.viewControllers lastObject]];
         [self settleSelectionBar:currentPageIndex];
     } else {
         selectionBar.frame = CGRectMake(xCoor-xFromCenter/[viewControllerArray count], selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
     }
 }
+
+//%%% checks to see which item we are dealing with from the array of view controllers
+-(NSInteger)indexOfController:(UIViewController *)viewController
+{
+    for (int i = 0; i<[viewControllerArray count]; i++) {
+        if (viewController == [viewControllerArray objectAtIndex:i])
+        {
+            return i;
+        }
+    }
+    return NSNotFound;
+}
+
+
+//                                                        //
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%        SETUP       %%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 #pragma mark - Page View Controller Data Source
 
@@ -227,18 +273,6 @@
         return nil;
     }
     return [viewControllerArray objectAtIndex:index];
-}
-
-//%%% checks to see which item we are dealing with from the array of view controllers
--(NSInteger)indexOfController:(UIViewController *)viewController
-{
-    for (int i = 0; i<[viewControllerArray count]; i++) {
-        if (viewController == [viewControllerArray objectAtIndex:i])
-        {
-            return i;
-        }
-    }
-    return NSNotFound;
 }
 
 @end
