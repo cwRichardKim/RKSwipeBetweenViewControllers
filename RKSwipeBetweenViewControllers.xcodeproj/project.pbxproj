@@ -456,6 +456,7 @@
 				992F23BC1985BD6400320CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		992F23BD1985BD6400320CAA /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllersTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				992F23BF1985BD6400320CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
