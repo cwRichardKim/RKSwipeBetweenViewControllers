@@ -7,147 +7,147 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		993A289D19804DD900B9F8F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A289C19804DD900B9F8F0 /* Foundation.framework */; };
-		993A289F19804DD900B9F8F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A289E19804DD900B9F8F0 /* CoreGraphics.framework */; };
-		993A28A119804DD900B9F8F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A28A019804DD900B9F8F0 /* UIKit.framework */; };
-		993A28A719804DD900B9F8F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 993A28A519804DD900B9F8F0 /* InfoPlist.strings */; };
-		993A28A919804DD900B9F8F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28A819804DD900B9F8F0 /* main.m */; };
-		993A28AD19804DD900B9F8F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28AC19804DD900B9F8F0 /* AppDelegate.m */; };
-		993A28B019804DD900B9F8F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 993A28AE19804DD900B9F8F0 /* Main.storyboard */; };
-		993A28B519804DD900B9F8F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993A28B419804DD900B9F8F0 /* Images.xcassets */; };
-		993A28BC19804DD900B9F8F0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A28BB19804DD900B9F8F0 /* XCTest.framework */; };
-		993A28BD19804DD900B9F8F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A289C19804DD900B9F8F0 /* Foundation.framework */; };
-		993A28BE19804DD900B9F8F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993A28A019804DD900B9F8F0 /* UIKit.framework */; };
-		993A28C619804DD900B9F8F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 993A28C419804DD900B9F8F0 /* InfoPlist.strings */; };
-		993A28C819804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28C719804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m */; };
-		993A28D319804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 993A28D219804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m */; };
+		992F238C1985BD6300320CAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F238B1985BD6300320CAA /* Foundation.framework */; };
+		992F238E1985BD6300320CAA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F238D1985BD6300320CAA /* CoreGraphics.framework */; };
+		992F23901985BD6300320CAA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F238F1985BD6300320CAA /* UIKit.framework */; };
+		992F23961985BD6300320CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 992F23941985BD6300320CAA /* InfoPlist.strings */; };
+		992F23981985BD6300320CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F23971985BD6300320CAA /* main.m */; };
+		992F239C1985BD6300320CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F239B1985BD6300320CAA /* AppDelegate.m */; };
+		992F239F1985BD6300320CAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992F239D1985BD6300320CAA /* Main.storyboard */; };
+		992F23A41985BD6300320CAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 992F23A31985BD6300320CAA /* Images.xcassets */; };
+		992F23AB1985BD6300320CAA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F23AA1985BD6300320CAA /* XCTest.framework */; };
+		992F23AC1985BD6300320CAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F238B1985BD6300320CAA /* Foundation.framework */; };
+		992F23AD1985BD6300320CAA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F238F1985BD6300320CAA /* UIKit.framework */; };
+		992F23B51985BD6400320CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 992F23B31985BD6300320CAA /* InfoPlist.strings */; };
+		992F23B71985BD6400320CAA /* RKSwipeBetweenViewControllersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F23B61985BD6400320CAA /* RKSwipeBetweenViewControllersTests.m */; };
+		992F23C21985BDD500320CAA /* RKSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F23C11985BDD500320CAA /* RKSwipeBetweenViewControllers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		993A28BF19804DD900B9F8F0 /* PBXContainerItemProxy */ = {
+		992F23AE1985BD6300320CAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 993A289119804DD800B9F8F0 /* Project object */;
+			containerPortal = 992F23801985BD6300320CAA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 993A289819804DD900B9F8F0;
-			remoteInfo = RKScrollingSegmentedControl;
+			remoteGlobalIDString = 992F23871985BD6300320CAA;
+			remoteInfo = RKSwipeBetweenViewControllers;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		993A289919804DD900B9F8F0 /* RKSwipeBetweenViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKSwipeBetweenViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		993A289C19804DD900B9F8F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		993A289E19804DD900B9F8F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		993A28A019804DD900B9F8F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		993A28A419804DD900B9F8F0 /* RKSwipeBetweenViewControllers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKSwipeBetweenViewControllers-Info.plist"; sourceTree = "<group>"; };
-		993A28A619804DD900B9F8F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		993A28A819804DD900B9F8F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		993A28AA19804DD900B9F8F0 /* RKScrollingSegmentedControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RKScrollingSegmentedControl-Prefix.pch"; sourceTree = "<group>"; };
-		993A28AB19804DD900B9F8F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		993A28AC19804DD900B9F8F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		993A28AF19804DD900B9F8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		993A28B419804DD900B9F8F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		993A28BA19804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RKSwipeBetweenViewControllersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		993A28BB19804DD900B9F8F0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		993A28C319804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKSwipeBetweenViewControllersTests-Info.plist"; sourceTree = "<group>"; };
-		993A28C519804DD900B9F8F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		993A28C719804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKScrollingSegmentedControlTests.m; sourceTree = "<group>"; };
-		993A28D119804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSwipeBetweenViewControllers.h; sourceTree = SOURCE_ROOT; };
-		993A28D219804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllers.m; sourceTree = SOURCE_ROOT; };
+		992F23881985BD6300320CAA /* RKSwipeBetweenViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKSwipeBetweenViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		992F238B1985BD6300320CAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		992F238D1985BD6300320CAA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		992F238F1985BD6300320CAA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		992F23931985BD6300320CAA /* RKSwipeBetweenViewControllers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKSwipeBetweenViewControllers-Info.plist"; sourceTree = "<group>"; };
+		992F23951985BD6300320CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		992F23971985BD6300320CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		992F23991985BD6300320CAA /* RKSwipeBetweenViewControllers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RKSwipeBetweenViewControllers-Prefix.pch"; sourceTree = "<group>"; };
+		992F239A1985BD6300320CAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		992F239B1985BD6300320CAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		992F239E1985BD6300320CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		992F23A31985BD6300320CAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		992F23A91985BD6300320CAA /* RKSwipeBetweenViewControllersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RKSwipeBetweenViewControllersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		992F23AA1985BD6300320CAA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		992F23B21985BD6300320CAA /* RKSwipeBetweenViewControllersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKSwipeBetweenViewControllersTests-Info.plist"; sourceTree = "<group>"; };
+		992F23B41985BD6300320CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		992F23B61985BD6400320CAA /* RKSwipeBetweenViewControllersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllersTests.m; sourceTree = "<group>"; };
+		992F23C01985BDD500320CAA /* RKSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSwipeBetweenViewControllers.h; sourceTree = SOURCE_ROOT; };
+		992F23C11985BDD500320CAA /* RKSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllers.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		993A289619804DD900B9F8F0 /* Frameworks */ = {
+		992F23851985BD6300320CAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A289F19804DD900B9F8F0 /* CoreGraphics.framework in Frameworks */,
-				993A28A119804DD900B9F8F0 /* UIKit.framework in Frameworks */,
-				993A289D19804DD900B9F8F0 /* Foundation.framework in Frameworks */,
+				992F238E1985BD6300320CAA /* CoreGraphics.framework in Frameworks */,
+				992F23901985BD6300320CAA /* UIKit.framework in Frameworks */,
+				992F238C1985BD6300320CAA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		993A28B719804DD900B9F8F0 /* Frameworks */ = {
+		992F23A61985BD6300320CAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A28BC19804DD900B9F8F0 /* XCTest.framework in Frameworks */,
-				993A28BE19804DD900B9F8F0 /* UIKit.framework in Frameworks */,
-				993A28BD19804DD900B9F8F0 /* Foundation.framework in Frameworks */,
+				992F23AB1985BD6300320CAA /* XCTest.framework in Frameworks */,
+				992F23AD1985BD6300320CAA /* UIKit.framework in Frameworks */,
+				992F23AC1985BD6300320CAA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		993A289019804DD800B9F8F0 = {
+		992F237F1985BD6300320CAA = {
 			isa = PBXGroup;
 			children = (
-				993A28A219804DD900B9F8F0 /* RKScrollingSegmentedControl */,
-				993A28C119804DD900B9F8F0 /* RKScrollingSegmentedControlTests */,
-				993A289B19804DD900B9F8F0 /* Frameworks */,
-				993A289A19804DD900B9F8F0 /* Products */,
+				992F23911985BD6300320CAA /* RKSwipeBetweenViewControllers */,
+				992F23B01985BD6300320CAA /* RKSwipeBetweenViewControllersTests */,
+				992F238A1985BD6300320CAA /* Frameworks */,
+				992F23891985BD6300320CAA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		993A289A19804DD900B9F8F0 /* Products */ = {
+		992F23891985BD6300320CAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				993A289919804DD900B9F8F0 /* RKSwipeBetweenViewControllers.app */,
-				993A28BA19804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests.xctest */,
+				992F23881985BD6300320CAA /* RKSwipeBetweenViewControllers.app */,
+				992F23A91985BD6300320CAA /* RKSwipeBetweenViewControllersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		993A289B19804DD900B9F8F0 /* Frameworks */ = {
+		992F238A1985BD6300320CAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				993A289C19804DD900B9F8F0 /* Foundation.framework */,
-				993A289E19804DD900B9F8F0 /* CoreGraphics.framework */,
-				993A28A019804DD900B9F8F0 /* UIKit.framework */,
-				993A28BB19804DD900B9F8F0 /* XCTest.framework */,
+				992F238B1985BD6300320CAA /* Foundation.framework */,
+				992F238D1985BD6300320CAA /* CoreGraphics.framework */,
+				992F238F1985BD6300320CAA /* UIKit.framework */,
+				992F23AA1985BD6300320CAA /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		993A28A219804DD900B9F8F0 /* RKScrollingSegmentedControl */ = {
+		992F23911985BD6300320CAA /* RKSwipeBetweenViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				993A28AB19804DD900B9F8F0 /* AppDelegate.h */,
-				993A28AC19804DD900B9F8F0 /* AppDelegate.m */,
-				993A28AE19804DD900B9F8F0 /* Main.storyboard */,
-				993A28B419804DD900B9F8F0 /* Images.xcassets */,
-				993A28D119804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.h */,
-				993A28D219804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m */,
-				993A28A319804DD900B9F8F0 /* Supporting Files */,
+				992F239A1985BD6300320CAA /* AppDelegate.h */,
+				992F239B1985BD6300320CAA /* AppDelegate.m */,
+				992F239D1985BD6300320CAA /* Main.storyboard */,
+				992F23A31985BD6300320CAA /* Images.xcassets */,
+				992F23C01985BDD500320CAA /* RKSwipeBetweenViewControllers.h */,
+				992F23C11985BDD500320CAA /* RKSwipeBetweenViewControllers.m */,
+				992F23921985BD6300320CAA /* Supporting Files */,
 			);
-			path = RKScrollingSegmentedControl;
+			path = RKSwipeBetweenViewControllers;
 			sourceTree = "<group>";
 		};
-		993A28A319804DD900B9F8F0 /* Supporting Files */ = {
+		992F23921985BD6300320CAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				993A28A419804DD900B9F8F0 /* RKSwipeBetweenViewControllers-Info.plist */,
-				993A28A519804DD900B9F8F0 /* InfoPlist.strings */,
-				993A28A819804DD900B9F8F0 /* main.m */,
-				993A28AA19804DD900B9F8F0 /* RKScrollingSegmentedControl-Prefix.pch */,
+				992F23931985BD6300320CAA /* RKSwipeBetweenViewControllers-Info.plist */,
+				992F23941985BD6300320CAA /* InfoPlist.strings */,
+				992F23971985BD6300320CAA /* main.m */,
+				992F23991985BD6300320CAA /* RKSwipeBetweenViewControllers-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		993A28C119804DD900B9F8F0 /* RKScrollingSegmentedControlTests */ = {
+		992F23B01985BD6300320CAA /* RKSwipeBetweenViewControllersTests */ = {
 			isa = PBXGroup;
 			children = (
-				993A28C719804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m */,
-				993A28C219804DD900B9F8F0 /* Supporting Files */,
+				992F23B61985BD6400320CAA /* RKSwipeBetweenViewControllersTests.m */,
+				992F23B11985BD6300320CAA /* Supporting Files */,
 			);
-			path = RKScrollingSegmentedControlTests;
+			path = RKSwipeBetweenViewControllersTests;
 			sourceTree = "<group>";
 		};
-		993A28C219804DD900B9F8F0 /* Supporting Files */ = {
+		992F23B11985BD6300320CAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				993A28C319804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests-Info.plist */,
-				993A28C419804DD900B9F8F0 /* InfoPlist.strings */,
+				992F23B21985BD6300320CAA /* RKSwipeBetweenViewControllersTests-Info.plist */,
+				992F23B31985BD6300320CAA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,56 +155,56 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		993A289819804DD900B9F8F0 /* RKSwipeBetweenViewControllers */ = {
+		992F23871985BD6300320CAA /* RKSwipeBetweenViewControllers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 993A28CB19804DD900B9F8F0 /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllers" */;
+			buildConfigurationList = 992F23BA1985BD6400320CAA /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllers" */;
 			buildPhases = (
-				993A289519804DD900B9F8F0 /* Sources */,
-				993A289619804DD900B9F8F0 /* Frameworks */,
-				993A289719804DD900B9F8F0 /* Resources */,
+				992F23841985BD6300320CAA /* Sources */,
+				992F23851985BD6300320CAA /* Frameworks */,
+				992F23861985BD6300320CAA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RKSwipeBetweenViewControllers;
-			productName = RKScrollingSegmentedControl;
-			productReference = 993A289919804DD900B9F8F0 /* RKSwipeBetweenViewControllers.app */;
+			productName = RKSwipeBetweenViewControllers;
+			productReference = 992F23881985BD6300320CAA /* RKSwipeBetweenViewControllers.app */;
 			productType = "com.apple.product-type.application";
 		};
-		993A28B919804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests */ = {
+		992F23A81985BD6300320CAA /* RKSwipeBetweenViewControllersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 993A28CE19804DD900B9F8F0 /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllersTests" */;
+			buildConfigurationList = 992F23BD1985BD6400320CAA /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllersTests" */;
 			buildPhases = (
-				993A28B619804DD900B9F8F0 /* Sources */,
-				993A28B719804DD900B9F8F0 /* Frameworks */,
-				993A28B819804DD900B9F8F0 /* Resources */,
+				992F23A51985BD6300320CAA /* Sources */,
+				992F23A61985BD6300320CAA /* Frameworks */,
+				992F23A71985BD6300320CAA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				993A28C019804DD900B9F8F0 /* PBXTargetDependency */,
+				992F23AF1985BD6300320CAA /* PBXTargetDependency */,
 			);
 			name = RKSwipeBetweenViewControllersTests;
-			productName = RKScrollingSegmentedControlTests;
-			productReference = 993A28BA19804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests.xctest */;
+			productName = RKSwipeBetweenViewControllersTests;
+			productReference = 992F23A91985BD6300320CAA /* RKSwipeBetweenViewControllersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		993A289119804DD800B9F8F0 /* Project object */ = {
+		992F23801985BD6300320CAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Richard Kim";
 				TargetAttributes = {
-					993A28B919804DD900B9F8F0 = {
-						TestTargetID = 993A289819804DD900B9F8F0;
+					992F23A81985BD6300320CAA = {
+						TestTargetID = 992F23871985BD6300320CAA;
 					};
 				};
 			};
-			buildConfigurationList = 993A289419804DD800B9F8F0 /* Build configuration list for PBXProject "RKSwipeBetweenViewControllers" */;
+			buildConfigurationList = 992F23831985BD6300320CAA /* Build configuration list for PBXProject "RKSwipeBetweenViewControllers" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -212,88 +212,88 @@
 				en,
 				Base,
 			);
-			mainGroup = 993A289019804DD800B9F8F0;
-			productRefGroup = 993A289A19804DD900B9F8F0 /* Products */;
+			mainGroup = 992F237F1985BD6300320CAA;
+			productRefGroup = 992F23891985BD6300320CAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				993A289819804DD900B9F8F0 /* RKSwipeBetweenViewControllers */,
-				993A28B919804DD900B9F8F0 /* RKSwipeBetweenViewControllersTests */,
+				992F23871985BD6300320CAA /* RKSwipeBetweenViewControllers */,
+				992F23A81985BD6300320CAA /* RKSwipeBetweenViewControllersTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		993A289719804DD900B9F8F0 /* Resources */ = {
+		992F23861985BD6300320CAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A28B519804DD900B9F8F0 /* Images.xcassets in Resources */,
-				993A28A719804DD900B9F8F0 /* InfoPlist.strings in Resources */,
-				993A28B019804DD900B9F8F0 /* Main.storyboard in Resources */,
+				992F23A41985BD6300320CAA /* Images.xcassets in Resources */,
+				992F23961985BD6300320CAA /* InfoPlist.strings in Resources */,
+				992F239F1985BD6300320CAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		993A28B819804DD900B9F8F0 /* Resources */ = {
+		992F23A71985BD6300320CAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A28C619804DD900B9F8F0 /* InfoPlist.strings in Resources */,
+				992F23B51985BD6400320CAA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		993A289519804DD900B9F8F0 /* Sources */ = {
+		992F23841985BD6300320CAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A28D319804E1A00B9F8F0 /* RKSwipeBetweenViewControllers.m in Sources */,
-				993A28AD19804DD900B9F8F0 /* AppDelegate.m in Sources */,
-				993A28A919804DD900B9F8F0 /* main.m in Sources */,
+				992F23C21985BDD500320CAA /* RKSwipeBetweenViewControllers.m in Sources */,
+				992F239C1985BD6300320CAA /* AppDelegate.m in Sources */,
+				992F23981985BD6300320CAA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		993A28B619804DD900B9F8F0 /* Sources */ = {
+		992F23A51985BD6300320CAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A28C819804DD900B9F8F0 /* RKScrollingSegmentedControlTests.m in Sources */,
+				992F23B71985BD6400320CAA /* RKSwipeBetweenViewControllersTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		993A28C019804DD900B9F8F0 /* PBXTargetDependency */ = {
+		992F23AF1985BD6300320CAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 993A289819804DD900B9F8F0 /* RKSwipeBetweenViewControllers */;
-			targetProxy = 993A28BF19804DD900B9F8F0 /* PBXContainerItemProxy */;
+			target = 992F23871985BD6300320CAA /* RKSwipeBetweenViewControllers */;
+			targetProxy = 992F23AE1985BD6300320CAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		993A28A519804DD900B9F8F0 /* InfoPlist.strings */ = {
+		992F23941985BD6300320CAA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				993A28A619804DD900B9F8F0 /* en */,
+				992F23951985BD6300320CAA /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		993A28AE19804DD900B9F8F0 /* Main.storyboard */ = {
+		992F239D1985BD6300320CAA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				993A28AF19804DD900B9F8F0 /* Base */,
+				992F239E1985BD6300320CAA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		993A28C419804DD900B9F8F0 /* InfoPlist.strings */ = {
+		992F23B31985BD6300320CAA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				993A28C519804DD900B9F8F0 /* en */,
+				992F23B41985BD6300320CAA /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		993A28C919804DD900B9F8F0 /* Debug */ = {
+		992F23B81985BD6400320CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -339,7 +339,7 @@
 			};
 			name = Debug;
 		};
-		993A28CA19804DD900B9F8F0 /* Release */ = {
+		992F23B91985BD6400320CAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,67 +371,67 @@
 			};
 			name = Release;
 		};
-		993A28CC19804DD900B9F8F0 /* Debug */ = {
+		992F23BB1985BD6400320CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RKScrollingSegmentedControl/RKSwipeBetweenViewControllers-Prefix.pch";
-				INFOPLIST_FILE = "RKScrollingSegmentedControl/RKSwipeBetweenViewControllers-Info.plist";
-				PRODUCT_NAME = RKSwipeBetweenViewControllers;
+				GCC_PREFIX_HEADER = "RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers-Prefix.pch";
+				INFOPLIST_FILE = "RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		993A28CD19804DD900B9F8F0 /* Release */ = {
+		992F23BC1985BD6400320CAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RKScrollingSegmentedControl/RKSwipeBetweenViewControllers-Prefix.pch";
-				INFOPLIST_FILE = "RKScrollingSegmentedControl/RKSwipeBetweenViewControllers-Info.plist";
-				PRODUCT_NAME = RKSwipeBetweenViewControllers;
+				GCC_PREFIX_HEADER = "RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers-Prefix.pch";
+				INFOPLIST_FILE = "RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		993A28CF19804DD900B9F8F0 /* Debug */ = {
+		992F23BE1985BD6400320CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKScrollingSegmentedControl.app/RKScrollingSegmentedControl";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKSwipeBetweenViewControllers.app/RKSwipeBetweenViewControllers";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RKScrollingSegmentedControl/RKScrollingSegmentedControl-Prefix.pch";
+				GCC_PREFIX_HEADER = "RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "RKScrollingSegmentedControlTests/RKSwipeBetweenViewControllersTests-Info.plist";
-				PRODUCT_NAME = RKSwipeBetweenViewControllersTests;
+				INFOPLIST_FILE = "RKSwipeBetweenViewControllersTests/RKSwipeBetweenViewControllersTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		993A28D019804DD900B9F8F0 /* Release */ = {
+		992F23BF1985BD6400320CAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKScrollingSegmentedControl.app/RKScrollingSegmentedControl";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKSwipeBetweenViewControllers.app/RKSwipeBetweenViewControllers";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RKScrollingSegmentedControl/RKScrollingSegmentedControl-Prefix.pch";
-				INFOPLIST_FILE = "RKScrollingSegmentedControlTests/RKSwipeBetweenViewControllersTests-Info.plist";
-				PRODUCT_NAME = RKSwipeBetweenViewControllersTests;
+				GCC_PREFIX_HEADER = "RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers-Prefix.pch";
+				INFOPLIST_FILE = "RKSwipeBetweenViewControllersTests/RKSwipeBetweenViewControllersTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -440,34 +440,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		993A289419804DD800B9F8F0 /* Build configuration list for PBXProject "RKSwipeBetweenViewControllers" */ = {
+		992F23831985BD6300320CAA /* Build configuration list for PBXProject "RKSwipeBetweenViewControllers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				993A28C919804DD900B9F8F0 /* Debug */,
-				993A28CA19804DD900B9F8F0 /* Release */,
+				992F23B81985BD6400320CAA /* Debug */,
+				992F23B91985BD6400320CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		993A28CB19804DD900B9F8F0 /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllers" */ = {
+		992F23BA1985BD6400320CAA /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				993A28CC19804DD900B9F8F0 /* Debug */,
-				993A28CD19804DD900B9F8F0 /* Release */,
+				992F23BB1985BD6400320CAA /* Debug */,
+				992F23BC1985BD6400320CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		993A28CE19804DD900B9F8F0 /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllersTests" */ = {
+		992F23BD1985BD6400320CAA /* Build configuration list for PBXNativeTarget "RKSwipeBetweenViewControllersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				993A28CF19804DD900B9F8F0 /* Debug */,
-				993A28D019804DD900B9F8F0 /* Release */,
+				992F23BE1985BD6400320CAA /* Debug */,
+				992F23BF1985BD6400320CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 993A289119804DD800B9F8F0 /* Project object */;
+	rootObject = 992F23801985BD6300320CAA /* Project object */;
 }

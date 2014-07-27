@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RKScrollingSegmentedControl.xcscheme</key>
+		<key>RKSwipeBetweenViewControllers.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>993A289819804DD900B9F8F0</key>
+		<key>992F23871985BD6300320CAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>993A28B919804DD900B9F8F0</key>
+		<key>992F23A81985BD6300320CAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

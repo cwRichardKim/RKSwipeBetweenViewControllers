@@ -111,7 +111,7 @@
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
 //%%%%%%%%%%%%%%%%%%        SETUP       %%%%%%%%%%%%%%%%%%//
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-//                                                        //                                      
+//                                                        //
 
 
 - (void)viewDidLoad
@@ -255,7 +255,7 @@
     if ((index == NSNotFound) || (index == 0)) {
         return nil;
     }
-
+    
     index--;
     return [viewControllerArray objectAtIndex:index];
 }
@@ -268,7 +268,7 @@
         return nil;
     }
     index++;
-
+    
     if (index == [viewControllerArray count]) {
         return nil;
     }

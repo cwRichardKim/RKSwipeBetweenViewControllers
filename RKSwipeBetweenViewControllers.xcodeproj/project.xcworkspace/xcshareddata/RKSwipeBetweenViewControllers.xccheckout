@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>606C149A-2CB9-4ADD-AEE2-1D3A80B37BFE</string>
+	<string>8CDE39A4-100E-47A8-AD0E-590D5CFA743F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>RKSwipeBetweenViewControllers</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -19,6 +19,8 @@
 	<dict>
 		<key>6E1844E6-E888-43BA-8EED-2A5833E5699C</key>
 		<string>../..</string>
+		<key>A720E71A-DAB3-484C-9290-2EAE006AC103</key>
+		<string>../../../RKSwipeBetweenViewControllers</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/cwRichardKim/RKScrollingSegmentedControl.git</string>
@@ -35,6 +37,14 @@
 			<string>6E1844E6-E888-43BA-8EED-2A5833E5699C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>RKScrollingSegmentedControl</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A720E71A-DAB3-484C-9290-2EAE006AC103</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RKSwipeBetweenViewControllers</string>
 		</dict>
 	</array>
 </dict>

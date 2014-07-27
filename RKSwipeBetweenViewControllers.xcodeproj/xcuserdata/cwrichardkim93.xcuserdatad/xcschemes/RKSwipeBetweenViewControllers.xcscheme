@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "993A289819804DD900B9F8F0"
+               BlueprintIdentifier = "992F23871985BD6300320CAA"
                BuildableName = "RKSwipeBetweenViewControllers.app"
                BlueprintName = "RKSwipeBetweenViewControllers"
                ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "993A28B919804DD900B9F8F0"
+               BlueprintIdentifier = "992F23A81985BD6300320CAA"
                BuildableName = "RKSwipeBetweenViewControllersTests.xctest"
                BlueprintName = "RKSwipeBetweenViewControllersTests"
                ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "993A289819804DD900B9F8F0"
+            BlueprintIdentifier = "992F23871985BD6300320CAA"
             BuildableName = "RKSwipeBetweenViewControllers.app"
             BlueprintName = "RKSwipeBetweenViewControllers"
             ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "993A289819804DD900B9F8F0"
+            BlueprintIdentifier = "992F23871985BD6300320CAA"
             BuildableName = "RKSwipeBetweenViewControllers.app"
             BlueprintName = "RKSwipeBetweenViewControllers"
             ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "993A289819804DD900B9F8F0"
+            BlueprintIdentifier = "992F23871985BD6300320CAA"
             BuildableName = "RKSwipeBetweenViewControllers.app"
             BlueprintName = "RKSwipeBetweenViewControllers"
             ReferencedContainer = "container:RKSwipeBetweenViewControllers.xcodeproj">
