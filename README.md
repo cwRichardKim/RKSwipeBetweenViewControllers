@@ -6,6 +6,7 @@ UIPageViewController and custom UISegmentedControl synchronized and animated.  S
 __Please check the .h to see how to customize anything__
 
 ##Pod
+You may or may not want to use the pod depending on your preferred usage.  If you use the storybaord heavily, i would encourage you to not use the pod as you will probably have to use the class as your own custom class.  
 	
 	pod 'RKSwipeBetweenViewControllers'
 	
