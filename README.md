@@ -29,7 +29,7 @@ check the RKSwipeBetweenViewControllers.h for more customizeable features
 ## how to use 
 (check out the provided AppDelegate to see an example):
 
-__Programmatically__
+__Programmatically__ (preferred)
 
 1. Import RKSwipeBetweenViewControllers.h
 	
@@ -61,16 +61,50 @@ __Programmatically__
   	```
   
 __StoryBoard__
+(do not use pods for this one)
 
-1. Import RKSwipeBetweenViewControllers.h
+1. Drop the file into your project and import RKSwipeBetweenViewControllers.h
 	
 	```objc
-	#import <RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers.h>
+	#import RKSwipeBetweenViewControllers.h
 	```
 
 2. Embed a UIPageViewController inside a UINavigationController.  Change the class of the to UINavigationController the custom class (RKSwipeBetweenViewControllers)
+3. change the transition style of the pageviewcontroller to scroll (click on the UIPageViewController in storyboard -> attributes inspector -> transition style -> scroll)
 
-3. add your viewcontrollers to viewControllerArray like in step 4 (above)
+4. go to the RKSwipeBetweenViewControllers.m file and use it as your own class now.  Add your view controllers to "viewControllerArray".  See below for various options.
+
+__Programmatically outside RKSwipeBetweenViewControllers.m__ 
+(if this navigation bar isn't the first screen that comes up, or if you want to call it from the delegate)
+
+	```objc
+	[customNavController.viewControllerArray addObjectsFromArray:@[viewController1, viewController2, viewController3]];
+	```
+
+__Programmatically inside RKSwipeBetweenViewControllers.m__ 
+(most cases if your view controllers are programmaticly created)
+
+	```objc
+	[viewControllerArray addObjectsFromArray:@[demo,demo2]];
+	```
+__storyboard inside RKSwipeBetweenViewControllers.m__ 
+(if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
+
+	```objc
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    	UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
+    
+    	[viewControllerArray addObject:theController];
+	```
+__storyboard outside RKSwipeBetweenViewControllers.m__ 
+(if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
+
+	```objc
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    	UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
+    
+    	[theCustomViewController.viewControllerArray addObject:theController];
+	```
 
 
 
