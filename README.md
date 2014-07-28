@@ -73,37 +73,37 @@ __StoryBoard__
 
 4. go to the RKSwipeBetweenViewControllers.m file and use it as your own class now.  Add your view controllers to "viewControllerArray".  See below for various options.
 
-__Programmatically outside RKSwipeBetweenViewControllers.m__ 
-(if this navigation bar isn't the first screen that comes up, or if you want to call it from the delegate)
-
-```objc
-[customNavController.viewControllerArray addObjectsFromArray:@[viewController1, viewController2, viewController3]];
-```
-
-__Programmatically inside RKSwipeBetweenViewControllers.m__ 
-(most cases if your view controllers are programmaticly created)
-
-```objc
-[viewControllerArray addObjectsFromArray:@[demo,demo2]];
-```
-__storyboard inside RKSwipeBetweenViewControllers.m__ 
-(if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
-
-```objc
-UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
-
-    [viewControllerArray addObject:theController];
-```
-__storyboard outside RKSwipeBetweenViewControllers.m__ 
-(if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
-
-```objc
-UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
-
-    [theCustomViewController.viewControllerArray addObject:theController];
-```
+	*Programmatically, outside RKSwipeBetweenViewControllers.m*
+	(if this navigation bar isn't the first screen that comes up, or if you want to call it from the delegate)
+	
+	```objc
+	[customNavController.viewControllerArray addObjectsFromArray:@[viewController1, viewController2, viewController3]];
+	```
+	
+	*Programmatically, inside RKSwipeBetweenViewControllers.m*
+	(most cases if your view controllers are programmaticly created)
+	
+	```objc
+	[viewControllerArray addObjectsFromArray:@[demo,demo2]];
+	```
+	*storyboard, inside RKSwipeBetweenViewControllers.m*
+	(if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
+	
+	```objc
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	    UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
+	
+	    [viewControllerArray addObject:theController];
+	```
+	*storyboard, outside RKSwipeBetweenViewControllers.m*
+	(if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
+	
+	```objc
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	    UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
+	
+	    [theCustomViewController.viewControllerArray addObject:theController];
+	```
 
 
 
