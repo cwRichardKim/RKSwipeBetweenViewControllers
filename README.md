@@ -10,17 +10,17 @@ __Please check the .h to see how to customize anything__
 	pod 'RKSwipeBetweenViewControllers'
 	
 
-## Demo (what you get): 
+## Demo: 
 Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
 
 ![demo](http://i.imgur.com/zEsm542.gif)
 
+__Everything from UIViewController, to UITableViewController, to custom view controllers all work__
 
-## Dynamic (add your controllers and it will adapt):
 ![Dynamic](http://i.imgur.com/iWtvUBb.gif)
 
+__Customizeable!__
 
-## Customizeable!:
 ![Customizeable!](http://i.imgur.com/dl422EL.gif)
 
 check the RKSwipeBetweenViewControllers.h for more customizeable features
