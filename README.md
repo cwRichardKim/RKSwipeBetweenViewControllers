@@ -6,10 +6,9 @@ UIPageViewController and custom UISegmentedControl synchronized and animated.  S
 __Please check the .h to see how to customize anything__
 
 ##Pod
-	```
+	
 	pod 'RKSwipeBetweenViewControllers'
-	```
-
+	
 
 ## Demo (what you get): 
 Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
@@ -77,34 +76,34 @@ __StoryBoard__
 __Programmatically outside RKSwipeBetweenViewControllers.m__ 
 (if this navigation bar isn't the first screen that comes up, or if you want to call it from the delegate)
 
-	```objc
-	[customNavController.viewControllerArray addObjectsFromArray:@[viewController1, viewController2, viewController3]];
-	```
+```objc
+[customNavController.viewControllerArray addObjectsFromArray:@[viewController1, viewController2, viewController3]];
+```
 
 __Programmatically inside RKSwipeBetweenViewControllers.m__ 
 (most cases if your view controllers are programmaticly created)
 
-	```objc
-	[viewControllerArray addObjectsFromArray:@[demo,demo2]];
-	```
+```objc
+[viewControllerArray addObjectsFromArray:@[demo,demo2]];
+```
 __storyboard inside RKSwipeBetweenViewControllers.m__ 
 (if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
 
-	```objc
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    	UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
-    
-    	[viewControllerArray addObject:theController];
-	```
+```objc
+UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
+
+    [viewControllerArray addObject:theController];
+```
 __storyboard outside RKSwipeBetweenViewControllers.m__ 
 (if your viewcontrollers are on the storyboard, but make sure to give them storyboard IDs)
 
-	```objc
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    	UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
-    
-    	[theCustomViewController.viewControllerArray addObject:theController];
-	```
+```objc
+UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController* theController = [storyboard instantiateViewControllerWithIdentifier:@"storyboardID"];
+
+    [theCustomViewController.viewControllerArray addObject:theController];
+```
 
 
 
