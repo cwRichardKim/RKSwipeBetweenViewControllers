@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "Swipe between ViewControllers like in the Spotify or Twitter app with an interactive Segmented Control in the Navigation Bar"
 
-  s.description  = "Similar to Twitter and Spotify, swipe between view controllers and the tabs in the navigation bar changes. -twitter, -spotify, -swipe, -navigation bar, -navigationbar, -between, -view controllers, -viewcontroller, -tab"
+  s.description  = "Similar to Twitter and Spotify, swipe between view controllers and the tabs in the navigation bar changes. -twitter, -spotify, -swipe, -navigation bar, -navigationbar, -between, -view controllers, -viewcontroller, -tab, -objectivec, -ios, -iphone, -xcode"
 
   s.homepage     = "https://github.com/cwRichardKim/RKSwipeBetweenViewControllers"
   s.screenshots  = "http://i.imgur.com/zEsm542.gif"
@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "LICENSE" }
+  # s.license      = "MIT (example)"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -70,7 +70,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/cwRichardKim/RKSwipeBetweenViewControllers", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/cwRichardKim/RKSwipeBetweenViewControllers.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -81,8 +81,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = 'RKSwipeBetweenViewControllers/*.{h,m}'
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -97,8 +96,6 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
-
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -120,7 +117,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
