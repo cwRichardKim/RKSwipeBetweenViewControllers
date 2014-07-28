@@ -3,9 +3,13 @@ RKSwipeBetweenViewControllers
 
 UIPageViewController and custom UISegmentedControl synchronized and animated.  Similar to Spotify's "My Music" section.
 
-In Progress: a CocoaPod version
-
 __Please check the .h to see how to customize anything__
+
+##Pod
+	```
+	pod 'RKSwipeBetweenViewControllers'
+	```
+
 
 ## Demo (what you get): 
 Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
@@ -28,25 +32,29 @@ check the RKSwipeBetweenViewControllers.h for more customizeable features
 __Programmatically__
 
 1. Import RKSwipeBetweenViewControllers.h
+	
+	```objc
+	#import <RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers.h>
+	```
 
 2. Initialize a UIPageViewController
 	
-	```
+	```objc
 	UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	```
 3. Initialize a RKSwipeBetweenViewControllers
 
-  	```
+  	```objc
 	RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
 	```
 4. Add all your ViewControllers (in order) to navigationController.viewControllerArray (try to keep it under 5)
   	
-	```
+	```objc
 	[navigationController.viewControllerArray addObjectsFromArray:@[viewController1, viewController2, viewController3]];
 	```
 5. Use the custom class (or call it as the first controller from app delegate: see below)
   	
-	```
+	```objc
   	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
   	self.window.rootViewController = navigationController;
   	[self.window makeKeyAndVisible];
@@ -54,9 +62,15 @@ __Programmatically__
   
 __StoryBoard__
 
-1. Embed a UIPageViewController inside a UINavigationController.  Change the class of the to UINavigationController the custom class (RKSwipeBetweenViewControllers)
+1. Import RKSwipeBetweenViewControllers.h
+	
+	```objc
+	#import <RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers.h>
+	```
 
-2. add your viewcontrollers to viewControllerArray like in step 4 (above)
+2. Embed a UIPageViewController inside a UINavigationController.  Change the class of the to UINavigationController the custom class (RKSwipeBetweenViewControllers)
+
+3. add your viewcontrollers to viewControllerArray like in step 4 (above)
 
 
 
