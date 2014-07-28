@@ -16,15 +16,13 @@ Don't worry about the colors, it's easy to change that to suit your own preferen
 
 ![demo](http://i.imgur.com/zEsm542.gif)
 
-__Everything from UIViewController, to UITableViewController, to custom view controllers all work__
-
-![Dynamic](http://i.imgur.com/iWtvUBb.gif)
+Any number of any view controllers should technically work, though it doesn't look great with more than 4
 
 __Customizeable!__
 
 ![Customizeable!](http://i.imgur.com/dl422EL.gif)
 
-check the RKSwipeBetweenViewControllers.h for more customizeable features
+(check the RKSwipeBetweenViewControllers.h for *actual* customizeable features)
 
 ## how to use 
 (check out the provided AppDelegate to see an example):
