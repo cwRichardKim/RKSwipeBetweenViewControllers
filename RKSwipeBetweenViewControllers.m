@@ -14,7 +14,6 @@
 #define HEIGHT 30 //%%% height of the segment
 
 //%%% customizeable selector bar attributes (the black bar under the buttons)
-#define BOUNCE_BUFFER 10 //%%% adds bounce to the selection bar when you scroll
 #define ANIMATION_SPEED 0.2 //%%% the number of seconds it takes to complete the animation
 #define SELECTOR_Y_BUFFER 40 //%%% the y-value of the bar that shows what page you are on (0 is the top)
 #define SELECTOR_HEIGHT 4 //%%% thickness of the selector bar
@@ -160,20 +159,22 @@
     selectionBar.hidden = YES;
     manualSelectionBar.frame = selectionBar.frame;
     manualSelectionBar.hidden = NO;
+    NSInteger tempIndex = currentPageIndex;
+    currentPageIndex = button.tag;
     
     [self animateToIndex:button.tag];
-    if (button.tag > currentPageIndex) {
-        for (int i = (int)currentPageIndex+1; i<=button.tag; i++) {
+    if (button.tag > tempIndex) {
+        for (int i = (int)tempIndex+1; i<=button.tag; i++) {
             [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
         }
-    } else if (button.tag < currentPageIndex) {
-        for (int i = (int)currentPageIndex-1; i >= button.tag; i--) {
+    } else if (button.tag < tempIndex) {
+        for (int i = (int)tempIndex-1; i >= button.tag; i--) {
             [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
         }
     }
 }
 
-//%%% when you add BOUNCE_BUFFER, then the selector passes the button by a few pixels, and then this method is called to pull it back, creating a bounce effect
+//%%% This is a safety measure to pull the selector on the the correct tab just in case it goes awry
 -(void)settleSelectionBar:(NSInteger)index
 {
     NSInteger numPages = [viewControllerArray count];
@@ -203,10 +204,10 @@
 //%%% method is called when any of the pages moves.  It extracts the xcoordinate from the center point and instructs the selection bar to move accordingly
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat xFromCenter = pageScrollView.accessibilityFrame.origin.x*(self.view.frame.size.width-X_BUFFER*2 +BOUNCE_BUFFER)/self.view.frame.size.width; //%%% positive for right swipe, negative for left
-    NSInteger xCoor = 10+selectionBar.frame.size.width*currentPageIndex;
+    CGFloat xFromCenter = self.view.frame.size.width-pageScrollView.contentOffset.x; //%%% positive for right swipe, negative for left
+    NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex;
+    NSLog(@"%i",currentPageIndex);
     if (xFromCenter == 0) {
-        currentPageIndex = [self indexOfController:[pageController.viewControllers lastObject]];
         [self settleSelectionBar:currentPageIndex];
     } else {
         selectionBar.frame = CGRectMake(xCoor-xFromCenter/[viewControllerArray count], selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
@@ -273,6 +274,13 @@
         return nil;
     }
     return [viewControllerArray objectAtIndex:index];
+}
+
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    if (completed) {
+        currentPageIndex = [self indexOfController:[pageViewController.viewControllers lastObject]];
+    }
 }
 
 @end

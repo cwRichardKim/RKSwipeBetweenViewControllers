@@ -39,7 +39,6 @@
  - selector bar color                   sbcolor
  - selector bar alpha                   sbalpha
  - moving selector bar alpha            msbalpha
- - selector bar bounce animation        BOUNCE_BUFFER
  - selector bar animation speed         ANIMATION_SPEED
  - selector bar further customization   top of the .m (multiple attributes
  - button colors                        buttoncolors
