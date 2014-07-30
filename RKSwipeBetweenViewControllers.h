@@ -171,5 +171,7 @@
 @property (nonatomic, strong) UIView *selectionBar;
 @property (nonatomic, strong) UIView *manualSelectionBar;
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, strong)UIPageViewController *pageController;
+@property (nonatomic, strong)UIView *navigationView;
 
 @end

@@ -21,7 +21,6 @@
     
     RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
     
-    
     //%%% DEMO CONTROLLERS
     UIViewController *demo = [[UIViewController alloc]init];
     UIViewController *demo2 = [[UIViewController alloc]init];

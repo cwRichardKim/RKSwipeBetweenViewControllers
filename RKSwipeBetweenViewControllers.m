@@ -18,8 +18,9 @@
 #define SELECTOR_Y_BUFFER 40 //%%% the y-value of the bar that shows what page you are on (0 is the top)
 #define SELECTOR_HEIGHT 4 //%%% thickness of the selector bar
 
+#define X_OFFSET 8 //%%% for some reason there's a little bit of a glitchy offset.  I'm going to look for a better workaround in the future
+
 @interface RKSwipeBetweenViewControllers () {
-    UIPageViewController *pageController;
     UIScrollView *pageScrollView;
     NSInteger currentPageIndex;
 }
@@ -31,6 +32,8 @@
 @synthesize selectionBar;
 @synthesize panGestureRecognizer;
 @synthesize manualSelectionBar;
+@synthesize pageController;
+@synthesize navigationView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +47,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UISegmentedControl *blah = [[UISegmentedControl alloc]initWithItems:@[@"blah",@"blahblah"]];
+    
+    self.navigationItem.titleView = blah;
     self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
@@ -67,14 +73,15 @@
 //%%% sets up the tabs using a loop.  You can take apart the loop to customize individual buttons, but remember to tag the buttons.  (button.tag=0 and the second button.tag=1, etc)
 -(void)setupSegmentButtons
 {
+    navigationView = [[UIView alloc]initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.navigationBar.frame.size.height)];
+    
     NSInteger numControllers = [viewControllerArray count];
     
     NSArray *buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
     
-    
     for (int i = 0; i<numControllers; i++) {
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+i*(self.view.frame.size.width-2*X_BUFFER)/numControllers, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/numControllers, HEIGHT)];
-        [self.navigationBar addSubview:button];
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+i*(self.view.frame.size.width-2*X_BUFFER)/numControllers-X_OFFSET, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/numControllers, HEIGHT)];
+        [navigationView addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
         button.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];//%%% buttoncolors
@@ -83,6 +90,8 @@
         
         [button setTitle:[buttonText objectAtIndex:i] forState:UIControlStateNormal]; //%%%buttontitle
     }
+    
+    pageController.navigationController.navigationBar.topItem.titleView = navigationView;
     
     //%%% example custom buttons example:
     /*
@@ -119,10 +128,10 @@
 //%%% sets up the selection bar under the buttons on the navigation bar
 -(void)setupSelector
 {
-    selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER, SELECTOR_Y_BUFFER,(self.view.frame.size.width-2*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
+    selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER-X_OFFSET, SELECTOR_Y_BUFFER,(self.view.frame.size.width-2*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
     selectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor
     selectionBar.alpha = 0.8; //%%% sbalpha
-    [self.navigationBar addSubview:selectionBar];
+    [navigationView addSubview:selectionBar];
     
     manualSelectionBar = [[UIView alloc]initWithFrame:selectionBar.frame];
     manualSelectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor (moving)
@@ -205,7 +214,7 @@
 -(void)settleSelectionBar:(NSInteger)index
 {
     NSInteger numPages = [viewControllerArray count];
-    NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index);
+    NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index)-X_OFFSET;
     
     [UIView animateWithDuration:ANIMATION_SPEED animations:^{
         selectionBar.frame = CGRectMake(xCoor, selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
@@ -219,7 +228,7 @@
 -(void)animateToIndex:(NSInteger)index
 {
     NSInteger numPages = [viewControllerArray count];
-    NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index);
+    NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index)-X_OFFSET;
     
     [UIView animateWithDuration:ANIMATION_SPEED*2.5 animations:^{
         manualSelectionBar.frame = CGRectMake(xCoor, selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
@@ -236,7 +245,7 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat xFromCenter = self.view.frame.size.width-pageScrollView.contentOffset.x; //%%% positive for right swipe, negative for left
-    NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex;
+    NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex -X_OFFSET;
     if (xFromCenter == 0) {
         [self settleSelectionBar:currentPageIndex];
     } else {
