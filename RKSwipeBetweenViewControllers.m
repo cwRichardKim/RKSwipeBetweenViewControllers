@@ -177,7 +177,10 @@
 }
 
 
-//%%% when you tap one of the buttons, it shows that page, but it also has to animate the other pages to make it feel like you're crossing a 2d expansion, so there's a loop that shows every view controller in the array up to the one you selected
+//%%% when you tap one of the buttons, it shows that page,
+//but it also has to animate the other pages to make it feel like you're crossing a 2d expansion,
+//so there's a loop that shows every view controller in the array up to the one you selected
+//eg: if you're on page 1 and you click tab 3, then it shows you page 2 and then page 3
 -(void)tapSegmentButtonAction:(UIButton *)button
 {
     selectionBar.hidden = YES;
@@ -209,7 +212,10 @@
     }];
 }
 
-//%%% when you tap a button, this hides the current selection bar and shows the background bar.  then, it animages it to the correct page and then shows the correct bar again.  The reason why there are two bars is because when you tap a button, the bar actually glitches out a little bit, so this prevents that
+//%%% when you tap a button, this hides the current selection bar and shows the background bar.
+//then, it animages it to the correct page and then shows the correct bar again.
+//The reason why there are two bars is because when you tap a button,
+//the bar actually glitches out a little bit, so this prevents that
 -(void)animateToIndex:(NSInteger)index
 {
     NSInteger numPages = [viewControllerArray count];
@@ -225,7 +231,8 @@
                      }];
 }
 
-//%%% method is called when any of the pages moves.  It extracts the xcoordinate from the center point and instructs the selection bar to move accordingly
+//%%% method is called when any of the pages moves.
+//It extracts the xcoordinate from the center point and instructs the selection bar to move accordingly
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat xFromCenter = self.view.frame.size.width-pageScrollView.contentOffset.x; //%%% positive for right swipe, negative for left
@@ -237,7 +244,7 @@
     }
 }
 
-//%%% checks to see which item we are dealing with from the array of view controllers
+//%%% checks to see which item we are currently looking at from the array of view controllers
 -(NSInteger)indexOfController:(UIViewController *)viewController
 {
     for (int i = 0; i<[viewControllerArray count]; i++) {
@@ -259,9 +266,13 @@
 
 
 
-
-
-
+//%%% the delegate functions for UIPageViewController.
+//Pretty standard, but generally, don't touch this.
+////////////////////////////////////////////////////////////
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%       UIPageViewController Delegate       %%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//
 
 - (void)didReceiveMemoryWarning
 {
@@ -305,5 +316,11 @@
         currentPageIndex = [self indexOfController:[pageViewController.viewControllers lastObject]];
     }
 }
+
+//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%       UIPageViewController Delegate       %%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+////////////////////////////////////////////////////////////
 
 @end
