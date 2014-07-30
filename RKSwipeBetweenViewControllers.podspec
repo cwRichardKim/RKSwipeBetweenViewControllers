@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RKSwipeBetweenViewControllers"
-  s.version      = "0.1"
+  s.version      = "0.1.0"
   s.summary      = "Swipe between ViewControllers like in the Spotify or Twitter app with an interactive Segmented Control in the Navigation Bar"
 
   s.description  = "Similar to Twitter and Spotify, swipe between view controllers and the tabs in the navigation bar changes. -twitter, -spotify, -swipe, -navigation bar, -navigationbar, -between, -view controllers, -viewcontroller, -tab, -objectivec, -ios, -iphone, -xcode"
