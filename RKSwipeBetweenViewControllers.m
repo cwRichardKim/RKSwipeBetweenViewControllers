@@ -206,7 +206,6 @@
 {
     CGFloat xFromCenter = self.view.frame.size.width-pageScrollView.contentOffset.x; //%%% positive for right swipe, negative for left
     NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex;
-    NSLog(@"%i",currentPageIndex);
     if (xFromCenter == 0) {
         [self settleSelectionBar:currentPageIndex];
     } else {

@@ -24,7 +24,7 @@
     
     //%%% DEMO CONTROLLERS
     UIViewController *demo = [[UIViewController alloc]init];
-    UITableViewController *demo2 = [[UITableViewController alloc]init];
+    UIViewController *demo2 = [[UIViewController alloc]init];
     UIViewController *demo3 = [[UIViewController alloc]init];
     UIViewController *demo4 = [[UIViewController alloc]init];
     demo.view.backgroundColor = [UIColor redColor];
