@@ -41,8 +41,16 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
+    self.navigationBar.translucent = NO;
+    viewControllerArray = [[NSMutableArray alloc]init];
+    currentPageIndex = 0;
+}
 
-//This stuff here is customizeable
+//This stuff here is customizeable: buttons, views, etc
 ////////////////////////////////////////////////////////////
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
 //%%%%%%%%%%%%%%%%%    CUSTOMIZEABLE    %%%%%%%%%%%%%%%%%%//
@@ -52,19 +60,19 @@
 //%%% color of the status bar
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+    
+//    return UIStatusBarStyleDefault;
 }
 
-//%%% sets up the buttons at the top using a loop.  You can take appart the loop to customize individual buttons, but remember to tag the buttons.  eg: the left-most button should get button.tag=0 and the second button.tag=1, etc
+//%%% sets up the tabs using a loop.  You can take apart the loop to customize individual buttons, but remember to tag the buttons.  (button.tag=0 and the second button.tag=1, etc)
 -(void)setupSegmentButtons
 {
     NSInteger numControllers = [viewControllerArray count];
     
-    NSArray *buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%% buttontext
+    NSArray *buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
     
     
     for (int i = 0; i<numControllers; i++) {
-        
-        //%%% creates a button and sets up the frame.  It looks complicated because I made them dynamic (this will work for ipad, landscape iphone, etc)
         UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+i*(self.view.frame.size.width-2*X_BUFFER)/numControllers, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/numControllers, HEIGHT)];
         [self.navigationBar addSubview:button];
         
@@ -75,6 +83,34 @@
         
         [button setTitle:[buttonText objectAtIndex:i] forState:UIControlStateNormal]; //%%%buttontitle
     }
+    
+    //%%% example custom buttons example:
+    /*
+    NSInteger width = (self.view.frame.size.width-(2*X_BUFFER))/3;
+    UIButton *leftButton = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER, Y_BUFFER, width, HEIGHT)];
+    UIButton *middleButton = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+width, Y_BUFFER, width, HEIGHT)];
+    UIButton *rightButton = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+2*width, Y_BUFFER, width, HEIGHT)];
+    
+    [self.navigationBar addSubview:leftButton];
+    [self.navigationBar addSubview:middleButton];
+    [self.navigationBar addSubview:rightButton];
+    
+    leftButton.tag = 0;
+    middleButton.tag = 1;
+    rightButton.tag = 2;
+    
+    leftButton.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];
+    middleButton.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];
+    rightButton.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];
+    
+    [leftButton addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [middleButton addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [rightButton addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [leftButton setTitle:@"left" forState:UIControlStateNormal];
+    [middleButton setTitle:@"middle" forState:UIControlStateNormal];
+    [rightButton setTitle:@"right" forState:UIControlStateNormal];
+     */
     
     [self setupSelector];
 }
@@ -111,18 +147,6 @@
 //%%%%%%%%%%%%%%%%%%        SETUP       %%%%%%%%%%%%%%%%%%//
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
 //                                                        //
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
-    self.navigationBar.translucent = NO;
-    viewControllerArray = [[NSMutableArray alloc]init];
-    currentPageIndex = 0;
-    
-    // Do any additional setup after loading the view.
-}
 
 -(void)viewWillAppear:(BOOL)animated
 {
