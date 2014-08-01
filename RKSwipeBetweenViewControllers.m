@@ -34,6 +34,7 @@
 @synthesize manualSelectionBar;
 @synthesize pageController;
 @synthesize navigationView;
+@synthesize buttonText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,9 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UISegmentedControl *blah = [[UISegmentedControl alloc]initWithItems:@[@"blah",@"blahblah"]];
-    
-    self.navigationItem.titleView = blah;
+
     self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
@@ -77,7 +76,9 @@
     
     NSInteger numControllers = [viewControllerArray count];
     
-    NSArray *buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
+    if (!buttonText) {
+         buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
+    }
     
     for (int i = 0; i<numControllers; i++) {
         UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(X_BUFFER+i*(self.view.frame.size.width-2*X_BUFFER)/numControllers-X_OFFSET, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/numControllers, HEIGHT)];

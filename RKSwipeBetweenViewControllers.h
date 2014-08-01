@@ -173,5 +173,6 @@
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, strong)UIPageViewController *pageController;
 @property (nonatomic, strong)UIView *navigationView;
+@property (nonatomic, strong)NSArray *buttonText;
 
 @end
