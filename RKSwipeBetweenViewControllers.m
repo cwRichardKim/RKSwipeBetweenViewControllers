@@ -138,7 +138,7 @@
     manualSelectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor (moving)
     manualSelectionBar.alpha = 0.5; //%%% msbalpha
     manualSelectionBar.hidden = YES;
-    [self.navigationBar addSubview:manualSelectionBar];
+    [navigationView addSubview:manualSelectionBar];
 }
 
 //                                                        //
@@ -232,10 +232,10 @@
     NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index)-X_OFFSET;
     
     [UIView animateWithDuration:ANIMATION_SPEED*2.5 animations:^{
-        manualSelectionBar.frame = CGRectMake(xCoor+X_OFFSET, selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
+        manualSelectionBar.frame = CGRectMake(xCoor, selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
     }
                      completion:^(BOOL finished){
-                         selectionBar.frame = manualSelectionBar.frame;
+                         [selectionBar setFrame:manualSelectionBar.frame];
                          selectionBar.hidden = NO;
                          manualSelectionBar.hidden = YES;
                      }];
