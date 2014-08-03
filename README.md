@@ -11,6 +11,9 @@ You may or may not want to use the pod depending on your preferred usage.  If yo
 	pod 'RKSwipeBetweenViewControllers'
 	
 
+##Updates and Questions
+[twitter](https://twitter.com/cwRichardKim) <--- I am a very light twitterer, so I wont spam you
+
 ## Demo: 
 Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
 
