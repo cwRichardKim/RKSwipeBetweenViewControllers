@@ -11,7 +11,7 @@ You may or may not want to use the pod depending on your preferred usage.  If yo
 	pod 'RKSwipeBetweenViewControllers'
 	
 
-##Updates and Questions
+##Updates, Questions, and Requests
 [twitter](https://twitter.com/cwRichardKim) <--- I am a very light twitterer, so I wont spam you
 
 ## Demo: 
