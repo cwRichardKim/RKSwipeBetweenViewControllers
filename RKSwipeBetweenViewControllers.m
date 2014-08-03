@@ -5,6 +5,7 @@
 //  Created by Richard Kim on 7/24/14.
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
 //
+//  @cwRichardKim for regular updates
 
 #import "RKSwipeBetweenViewControllers.h"
 

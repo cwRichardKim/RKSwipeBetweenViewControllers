@@ -35,6 +35,8 @@
  TABLE OF CONTENTS
  If you want to customize something, look for what you want on the left and then search (cmd+shift+"f") for the term on the right.
  
+ @cwRichardKim for regular updates / requests
+ 
  customizeable item                       Search Term
  - selector bar color                   sbcolor
  - selector bar alpha                   sbalpha
