@@ -6,18 +6,18 @@ UIPageViewController and custom UISegmentedControl synchronized and animated.  S
 __Please check the .h to see how to customize anything__
 
 ##Pod
-You may or may not want to use the pod depending on your preferred usage.  If you use the storyboard heavily, i would encourage you to not use the pod as you will probably have to use the class as your own custom class.  
+You should not use the pod in most cases, as they don't allow for customizeability.  I would recommend dragging the .h and .m files manually into your project
 	
 	pod 'RKSwipeBetweenViewControllers'
 	
 
 ##Updates, Questions, and Requests
-[twitter](https://twitter.com/cwRichardKim) <--- I am a very light twitterer, so I wont spam you
+[twitter](https://twitter.com/cwRichardKim) <--- I am a very light twitterer, so I won't spam you
 
 ## Demo: 
 Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
 
-![demo](http://i.imgur.com/zEsm542.gif)
+![demo](http://i.imgur.com/zlfWDa1.gif)
 
 Any number of any view controllers should technically work, though it doesn't look great with more than 4
 
