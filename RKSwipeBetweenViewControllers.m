@@ -50,8 +50,8 @@
 {
     [super viewDidLoad];
 
-    self.navigationBar.barTintColor = [UIColor colorWithRed:0.01 green:0.05 blue:0.06 alpha:1]; //%%% bartint
-    self.navigationBar.translucent = NO;
+    self.navigationBar.barTintColor = [UIColor colorWithRed:.20 green:.20 blue:.20 alpha:1]; //%%% bartint
+    self.navigationBar.translucent = YES;
     viewControllerArray = [[NSMutableArray alloc]init];
     currentPageIndex = 0;
 }
@@ -78,7 +78,7 @@
     NSInteger numControllers = [viewControllerArray count];
     
     if (!buttonText) {
-         buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
+         buttonText = [[NSArray alloc]initWithObjects: @"Views",@"Tables",@"etc",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
     }
     
     for (int i = 0; i<numControllers; i++) {
@@ -86,7 +86,7 @@
         [navigationView addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-        button.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];//%%% buttoncolors
+//        button.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];//%%% buttoncolors
         
         [button addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -131,13 +131,12 @@
 -(void)setupSelector
 {
     selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER-X_OFFSET, SELECTOR_Y_BUFFER,(self.view.frame.size.width-2*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
-    selectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor
+    selectionBar.backgroundColor = [UIColor colorWithRed:.41 green:.66 blue:.68 alpha:1]; //%%% sbcolor
     selectionBar.alpha = 0.8; //%%% sbalpha
     [navigationView addSubview:selectionBar];
     
     manualSelectionBar = [[UIView alloc]initWithFrame:selectionBar.frame];
-    manualSelectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor (moving)
-    manualSelectionBar.alpha = 0.5; //%%% msbalpha
+    manualSelectionBar.backgroundColor = [UIColor colorWithRed:.41 green:.66 blue:.68 alpha:.6]; //%%% sbcolor (moving)
     manualSelectionBar.hidden = YES;
     [navigationView addSubview:manualSelectionBar];
 }
