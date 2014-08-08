@@ -15,7 +15,7 @@ You should not use the pod in most cases, as they don't allow for customizeabili
 [twitter](https://twitter.com/cwRichardKim) <--- I am a very light twitterer, so I won't spam you
 
 ## Demo: 
-Don't worry about the colors, it's easy to change that to suit your own preferences.  I just kept colors to make it clear what's happening
+(after five minutes of customization)
 
 ![demo](http://i.imgur.com/zlfWDa1.gif)
 
