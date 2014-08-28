@@ -24,7 +24,6 @@
 @interface RKSwipeBetweenViewControllers () {
     UIScrollView *pageScrollView;
     NSInteger currentPageIndex;
-    CGFloat prevXCoor;
 }
 
 @end
@@ -54,7 +53,6 @@
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
     currentPageIndex = 0;
-    prevXCoor = 0;
 }
 
 //This stuff here is customizeable: buttons, views, etc
@@ -183,6 +181,24 @@
 }
 
 
+//                                                        //
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%        SETUP       %%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+////////////////////////////////////////////////////////////
+
+
+
+
+//%%% methods called when you tap a button or scroll through the pages
+// generally shouldn't touch this unless you know what you're doing or
+// have a particular performance thing in mind
+//////////////////////////////////////////////////////////
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%        MOVEMENT         %%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//                                                      //
+
 //%%% when you tap one of the buttons, it shows that page,
 //but it also has to animate the other pages to make it feel like you're crossing a 2d expansion,
 //so there's a loop that shows every view controller in the array up to the one you selected
@@ -193,15 +209,24 @@
     
     __weak typeof(self) weakSelf = self;
     
+    //%%% check to see if you're going left -> right or right -> left
     if (button.tag > tempIndex) {
+        
+        //%%% scroll through all the objects between the two points
         for (int i = (int)tempIndex+1; i<=button.tag; i++) {
             [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL complete){
+                
+                //%%% if the action finishes scrolling (i.e. the user doesn't stop it in the middle),
+                //then it updates the page that it's currently on
                 if (complete) {
                     [weakSelf updateCurrentPageIndex:i];
                 }
             }];
         }
-    } else if (button.tag < tempIndex) {
+    }
+    
+    //%%% this is the same thing but for going right -> left
+    else if (button.tag < tempIndex) {
         for (int i = (int)tempIndex-1; i >= button.tag; i--) {
             [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL complete){
                 if (complete) {
@@ -212,6 +237,8 @@
     }
 }
 
+//%%% makes sure the nav bar is always aware of what page you're on
+//in reference to the array of view controllers you gave
 -(void)updateCurrentPageIndex:(int)newIndex
 {
     currentPageIndex = newIndex;
@@ -223,31 +250,19 @@
 {
     CGFloat xFromCenter = self.view.frame.size.width-pageScrollView.contentOffset.x; //%%% positive for right swipe, negative for left
     
+    //%%% checks to see what page you are on and adjusts the xCoor accordingly.
+    //i.e. if you're on the second page, it makes sure that the bar starts from the frame.origin.x of the
+    //second tab instead of the beginning
     NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex-X_OFFSET;
     
     selectionBar.frame = CGRectMake(xCoor-xFromCenter/[viewControllerArray count], selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
-    
-    prevXCoor = xFromCenter;
 }
 
-//%%% checks to see which item we are currently looking at from the array of view controllers
--(NSInteger)indexOfController:(UIViewController *)viewController
-{
-    for (int i = 0; i<[viewControllerArray count]; i++) {
-        if (viewController == [viewControllerArray objectAtIndex:i])
-        {
-            return i;
-        }
-    }
-    return NSNotFound;
-}
-
-
-//                                                        //
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-//%%%%%%%%%%%%%%%%%%        SETUP       %%%%%%%%%%%%%%%%%%//
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-////////////////////////////////////////////////////////////
+//                                                      //
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%         MOVEMENT         %%%%%%%%%%%%%//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+//////////////////////////////////////////////////////////
 
 
 
@@ -301,6 +316,20 @@
     if (completed) {
         currentPageIndex = [self indexOfController:[pageViewController.viewControllers lastObject]];
     }
+}
+
+
+//%%% checks to see which item we are currently looking at from the array of view controllers.
+// not really a delegate method, but is used in all the delegate methods, so might as well include it here
+-(NSInteger)indexOfController:(UIViewController *)viewController
+{
+    for (int i = 0; i<[viewControllerArray count]; i++) {
+        if (viewController == [viewControllerArray objectAtIndex:i])
+        {
+            return i;
+        }
+    }
+    return NSNotFound;
 }
 
 //

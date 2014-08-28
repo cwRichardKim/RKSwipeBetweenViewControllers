@@ -124,23 +124,12 @@
      go.
  
     - Moving the Slider
-     Unfortunately, I've found that because I grabbed the UIScrollView's 
-     delegate, whenever I move the scroll view for anything, it moves 
-     the slider.  Which means, whenever I change the pages programmatically,
-     it also adjusts the slider.  This becomes really janky and stuttery
-     when you're dealing with multiple view controllers, and it jumps around
-     because it can't tell the difference between two pages very well
- 
-     So, I've constructed another slider called "manualSelectionBar" that
-     moves instead.  You can see this when you click, the bar gets darker.
-     I've added that intentionally, but you can remove that by going to 
-     "msbalpha".  So, when you tap one of the tabs, the current slider
-     that's connected to the UIScrollView hides, and the background slider
-     shows up.  Then, it moves appropriately, and switches places again.
-     This way you can also control the speed of the slider's movement
- 
-     However, this does mean that if you tap a tab and then stop the
-     movement manually, it does something a little weird.
+     When you click a tab, because it scrolls through the pages until it gets
+     to the page you want, it calls "scrollViewDidScroll", which takes care of
+     moving the slider. So, the formula for movement is i*c+x. i is 320/number
+     of tabs (i.e. width of 1 tab), c is the current page index and x is change
+     in the scrollView's x coordinates. For example, if I'm on the 2nd tab and 
+     I scroll to the 4th tab, the slider has to move from 80*1+0 to 80*3+0
  
 - Lag when you first swipe through your view controllers
      The reason this happens is because of the way UIPageViewController works.
