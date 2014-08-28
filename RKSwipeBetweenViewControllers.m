@@ -24,6 +24,7 @@
 @interface RKSwipeBetweenViewControllers () {
     UIScrollView *pageScrollView;
     NSInteger currentPageIndex;
+    CGFloat prevXCoor;
 }
 
 @end
@@ -32,7 +33,6 @@
 @synthesize viewControllerArray;
 @synthesize selectionBar;
 @synthesize panGestureRecognizer;
-@synthesize manualSelectionBar;
 @synthesize pageController;
 @synthesize navigationView;
 @synthesize buttonText;
@@ -54,6 +54,7 @@
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
     currentPageIndex = 0;
+    prevXCoor = 0;
 }
 
 //This stuff here is customizeable: buttons, views, etc
@@ -134,12 +135,6 @@
     selectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor
     selectionBar.alpha = 0.8; //%%% sbalpha
     [navigationView addSubview:selectionBar];
-    
-    manualSelectionBar = [[UIView alloc]initWithFrame:selectionBar.frame];
-    manualSelectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor (moving)
-    manualSelectionBar.alpha = 0.5; //%%% msbalpha
-    manualSelectionBar.hidden = YES;
-    [navigationView addSubview:manualSelectionBar];
 }
 
 //                                                        //
@@ -194,52 +189,32 @@
 //eg: if you're on page 1 and you click tab 3, then it shows you page 2 and then page 3
 -(void)tapSegmentButtonAction:(UIButton *)button
 {
-    selectionBar.hidden = YES;
-    manualSelectionBar.frame = selectionBar.frame;
-    manualSelectionBar.hidden = NO;
     NSInteger tempIndex = currentPageIndex;
-    currentPageIndex = button.tag;
     
-    [self animateToIndex:button.tag];
+    __weak typeof(self) weakSelf = self;
+    
     if (button.tag > tempIndex) {
         for (int i = (int)tempIndex+1; i<=button.tag; i++) {
-            [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+            [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL complete){
+                if (complete) {
+                    [weakSelf updateCurrentPageIndex:i];
+                }
+            }];
         }
     } else if (button.tag < tempIndex) {
         for (int i = (int)tempIndex-1; i >= button.tag; i--) {
-            [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+            [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL complete){
+                if (complete) {
+                    [weakSelf updateCurrentPageIndex:i];
+                }
+            }];
         }
     }
 }
 
-//%%% This is a safety measure to pull the selector on the the correct tab just in case it goes awry
--(void)settleSelectionBar:(NSInteger)index
+-(void)updateCurrentPageIndex:(int)newIndex
 {
-    NSInteger numPages = [viewControllerArray count];
-    NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index)-X_OFFSET;
-    
-    [UIView animateWithDuration:ANIMATION_SPEED animations:^{
-        selectionBar.frame = CGRectMake(xCoor, selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
-    }];
-}
-
-//%%% when you tap a button, this hides the current selection bar and shows the background bar.
-//then, it animages it to the correct page and then shows the correct bar again.
-//The reason why there are two bars is because when you tap a button,
-//the bar actually glitches out a little bit, so this prevents that
--(void)animateToIndex:(NSInteger)index
-{
-    NSInteger numPages = [viewControllerArray count];
-    NSInteger xCoor = X_BUFFER+((self.view.frame.size.width-2*X_BUFFER)/numPages*index)-X_OFFSET;
-    
-    [UIView animateWithDuration:ANIMATION_SPEED*2.5 animations:^{
-        manualSelectionBar.frame = CGRectMake(xCoor, selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
-    }
-                     completion:^(BOOL finished){
-                         [selectionBar setFrame:manualSelectionBar.frame];
-                         selectionBar.hidden = NO;
-                         manualSelectionBar.hidden = YES;
-                     }];
+    currentPageIndex = newIndex;
 }
 
 //%%% method is called when any of the pages moves.
@@ -247,12 +222,12 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat xFromCenter = self.view.frame.size.width-pageScrollView.contentOffset.x; //%%% positive for right swipe, negative for left
-    NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex -X_OFFSET;
-    if (xFromCenter == 0) {
-        [self settleSelectionBar:currentPageIndex];
-    } else {
-        selectionBar.frame = CGRectMake(xCoor-xFromCenter/[viewControllerArray count], selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
-    }
+    
+    NSInteger xCoor = X_BUFFER+selectionBar.frame.size.width*currentPageIndex-X_OFFSET;
+    
+    selectionBar.frame = CGRectMake(xCoor-xFromCenter/[viewControllerArray count], selectionBar.frame.origin.y, selectionBar.frame.size.width, selectionBar.frame.size.height);
+    
+    prevXCoor = xFromCenter;
 }
 
 //%%% checks to see which item we are currently looking at from the array of view controllers
