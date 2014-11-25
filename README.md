@@ -6,7 +6,7 @@ UIPageViewController and custom UISegmentedControl synchronized and animated.  S
 __Please check the .h to see how to customize anything__
 
 ##Pod
-You should not use the pod in most cases, as they don't allow for customizeability.  I would recommend dragging the .h and .m files manually into your project
+You should not use the pod in most cases, as they don't allow for customizability.  I would recommend dragging the .h and .m files manually into your project
 	
 	pod 'RKSwipeBetweenViewControllers'
 	
@@ -21,11 +21,11 @@ You should not use the pod in most cases, as they don't allow for customizeabili
 
 Any number of any view controllers should technically work, though it doesn't look great with more than 4
 
-__Customizeable!__
+__Customizable!__
 
-![Customizeable!](http://i.imgur.com/dl422EL.gif)
+![Customizable!](http://i.imgur.com/dl422EL.gif)
 
-(check the RKSwipeBetweenViewControllers.h for *actual* customizeable features)
+(check the RKSwipeBetweenViewControllers.h for *actual* customizable features)
 
 ## how to use 
 (check out the provided AppDelegate to see an example):
@@ -83,7 +83,7 @@ __StoryBoard__
 	```
 	
 	*Programmatically, inside RKSwipeBetweenViewControllers.m*
-	(most cases if your view controllers are programmaticly created)
+	(most cases if your view controllers are programmatically created)
 	
 	```objc
 	[viewControllerArray addObjectsFromArray:@[demo,demo2]];
