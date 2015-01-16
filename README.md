@@ -112,3 +112,9 @@ __StoryBoard__
 Any problems/questions? shoot me a pm
 
 
+### Areas for Improvement / Involvement
+* Working with horizontal layout
+* Working with more than 5 pages
+* Handful of infrequent bugs
+* Better performance when loading pages
+* Changing layout away from UINavigationController to allow the bar to be at the bottom
