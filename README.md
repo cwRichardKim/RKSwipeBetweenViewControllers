@@ -118,3 +118,4 @@ Any problems/questions? shoot me a pm
 * Handful of infrequent bugs
 * Better performance when loading pages
 * Changing layout away from UINavigationController to allow the bar to be at the bottom
+* Bug: adding a MKMapView to a UIViewController in storyboard causes strange visual bug. Adding programmatically is fine
