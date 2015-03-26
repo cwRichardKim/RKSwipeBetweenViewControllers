@@ -30,7 +30,7 @@
     demo2.view.backgroundColor = [UIColor whiteColor];
     demo3.view.backgroundColor = [UIColor grayColor];
     demo4.view.backgroundColor = [UIColor orangeColor];
-    [navigationController.viewControllerArray addObjectsFromArray:@[demo,demo2,demo3/*,demo4*/]];
+    [navigationController.viewControllerArray addObjectsFromArray:@[demo,demo2,demo3,demo4]];
     
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
