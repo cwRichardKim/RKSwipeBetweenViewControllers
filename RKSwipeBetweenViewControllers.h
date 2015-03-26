@@ -160,7 +160,6 @@
 @property (nonatomic, strong) NSMutableArray *viewControllerArray;
 @property (nonatomic, weak) id<RKSwipeBetweenViewControllersDelegate> navDelegate;
 @property (nonatomic, strong) UIView *selectionBar;
-@property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, strong)UIPageViewController *pageController;
 @property (nonatomic, strong)UIView *navigationView;
 @property (nonatomic, strong)NSArray *buttonText;
