@@ -53,6 +53,9 @@
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
     currentPageIndex = 0;
+    
+    [self setupPageViewController];
+    [self setupSegmentButtons];
 }
 
 //This stuff here is customizeable: buttons, views, etc
@@ -152,11 +155,13 @@
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
 //                                                        //
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self setupPageViewController];
-    [self setupSegmentButtons];
-}
+
+//move these code to viewDidLoad to avoid error when embed in tab bar controller.
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [self setupPageViewController];
+//    [self setupSegmentButtons];
+//}
 
 //%%% generic setup stuff for a pageview controller.  Sets up the scrolling style and delegate for the controller
 -(void)setupPageViewController
