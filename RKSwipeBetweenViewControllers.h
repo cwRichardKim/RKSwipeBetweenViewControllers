@@ -147,13 +147,11 @@
      already, so I won't get into detail.
  */
 
+#import <UIKit/UIKit.h>
+
 @protocol RKSwipeBetweenViewControllersDelegate <NSObject>
 
 @end
-
-#import <UIKit/UIKit.h>
-
-
 
 @interface RKSwipeBetweenViewControllers : UINavigationController <UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate>
 
