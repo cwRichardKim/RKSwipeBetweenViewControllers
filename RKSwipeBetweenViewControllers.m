@@ -26,6 +26,18 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 @property (nonatomic) UIScrollView *pageScrollView;
 @property (nonatomic) NSInteger currentPageIndex;
+/*
+ During Page Scrolling,we should avoild user to tap the segmentButton to fix the crash.
+ 
+ We find the crash situation:
+ 
+ Launch the demo > scrolling in the first page > and then quickly tap the fourth segment button => the app will crash
+ 
+ So I add isPageScrollingFlag to avoid user to tap the segment button during scrolling to fix the crash.
+ 
+ Thank you for RKSwipBetweenViewControllers.
+ **/
+@property (nonatomic) BOOL isPageScrollingFlag;
 
 @end
 
@@ -53,6 +65,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
     self.currentPageIndex = 0;
+    self.isPageScrollingFlag = NO;
 }
 
 #pragma mark Customizables
@@ -166,34 +179,38 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 //so there's a loop that shows every view controller in the array up to the one you selected
 //eg: if you're on page 1 and you click tab 3, then it shows you page 2 and then page 3
 -(void)tapSegmentButtonAction:(UIButton *)button {
-    NSInteger tempIndex = self.currentPageIndex;
     
-    __weak typeof(self) weakSelf = self;
-    
-    //%%% check to see if you're going left -> right or right -> left
-    if (button.tag > tempIndex) {
+    if (!self.isPageScrollingFlag) { // During Page Scrolling,we should avoild user to tap the segmentButton.
         
-        //%%% scroll through all the objects between the two points
-        for (int i = (int)tempIndex+1; i<=button.tag; i++) {
-            [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL complete){
-                
-                //%%% if the action finishes scrolling (i.e. the user doesn't stop it in the middle),
-                //then it updates the page that it's currently on
-                if (complete) {
-                    [weakSelf updateCurrentPageIndex:i];
-                }
-            }];
+        NSInteger tempIndex = self.currentPageIndex;
+        
+        __weak typeof(self) weakSelf = self;
+        
+        //%%% check to see if you're going left -> right or right -> left
+        if (button.tag > tempIndex) {
+            
+            //%%% scroll through all the objects between the two points
+            for (int i = (int)tempIndex+1; i<=button.tag; i++) {
+                [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL complete){
+                    
+                    //%%% if the action finishes scrolling (i.e. the user doesn't stop it in the middle),
+                    //then it updates the page that it's currently on
+                    if (complete) {
+                        [weakSelf updateCurrentPageIndex:i];
+                    }
+                }];
+            }
         }
-    }
-    
-    //%%% this is the same thing but for going right -> left
-    else if (button.tag < tempIndex) {
-        for (int i = (int)tempIndex-1; i >= button.tag; i--) {
-            [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL complete){
-                if (complete) {
-                    [weakSelf updateCurrentPageIndex:i];
-                }
-            }];
+        
+        //%%% this is the same thing but for going right -> left
+        else if (button.tag < tempIndex) {
+            for (int i = (int)tempIndex-1; i >= button.tag; i--) {
+                [pageController setViewControllers:@[[viewControllerArray objectAtIndex:i]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL complete){
+                    if (complete) {
+                        [weakSelf updateCurrentPageIndex:i];
+                    }
+                }];
+            }
         }
     }
 }
@@ -272,6 +289,20 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
         }
     }
     return NSNotFound;
+}
+
+// =======================================================================
+#pragma mark - ScrollViewDelegate 代理函数
+// =======================================================================
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.isPageScrollingFlag = YES;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.isPageScrollingFlag = NO;
 }
 
 @end
