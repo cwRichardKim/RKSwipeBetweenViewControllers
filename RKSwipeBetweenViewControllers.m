@@ -233,8 +233,6 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSInteger index = [self indexOfController:viewController];
 
-  NSLog(@"before controller called");
-    
     if ((index == NSNotFound) || (index == 0)) {
         return nil;
     }
@@ -245,8 +243,6 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSInteger index = [self indexOfController:viewController];
-
-  NSLog(@"after controller called");
 
     if (index == NSNotFound) {
         return nil;
