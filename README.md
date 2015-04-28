@@ -108,9 +108,7 @@ __StoryBoard__
 	```
 
 
-
 Any problems/questions? shoot me a pm
-
 
 ### Areas for Improvement / Involvement
 * Working with horizontal layout
@@ -119,3 +117,4 @@ Any problems/questions? shoot me a pm
 * Better performance when loading pages
 * Changing layout away from UINavigationController to allow the bar to be at the bottom
 * Bug: adding a MKMapView to a UIViewController in storyboard causes strange visual bug. Adding programmatically is fine
+* Crash on load for UITabBarControllers: https://github.com/cwRichardKim/RKSwipeBetweenViewControllers/pull/15
