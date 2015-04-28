@@ -26,18 +26,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 @property (nonatomic) UIScrollView *pageScrollView;
 @property (nonatomic) NSInteger currentPageIndex;
-/*
- During Page Scrolling,we should avoild user to tap the segmentButton to fix the crash.
- 
- We find the crash situation:
- 
- Launch the demo > scrolling in the first page > and then quickly tap the fourth segment button => the app will crash
- 
- So I add isPageScrollingFlag to avoid user to tap the segment button during scrolling to fix the crash.
- 
- Thank you for RKSwipBetweenViewControllers.
- **/
-@property (nonatomic) BOOL isPageScrollingFlag;
+@property (nonatomic) BOOL isPageScrollingFlag; //%%% prevents scrolling / segment tap crash
 
 @end
 
@@ -180,7 +169,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 //eg: if you're on page 1 and you click tab 3, then it shows you page 2 and then page 3
 -(void)tapSegmentButtonAction:(UIButton *)button {
     
-    if (!self.isPageScrollingFlag) { // During Page Scrolling,we should avoild user to tap the segmentButton.
+    if (!self.isPageScrollingFlag) {
         
         NSInteger tempIndex = self.currentPageIndex;
         
@@ -291,17 +280,13 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
     return NSNotFound;
 }
 
-// =======================================================================
-#pragma mark - ScrollViewDelegate 代理函数
-// =======================================================================
+#pragma mark - Scroll View Delegate
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.isPageScrollingFlag = YES;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.isPageScrollingFlag = NO;
 }
 
