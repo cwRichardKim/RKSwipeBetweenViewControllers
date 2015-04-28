@@ -27,6 +27,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 @property (nonatomic) UIScrollView *pageScrollView;
 @property (nonatomic) NSInteger currentPageIndex;
 @property (nonatomic) BOOL isPageScrollingFlag; //%%% prevents scrolling / segment tap crash
+@property (nonatomic) BOOL hasAppearedFlag; //%%% prevents reloading (maintains state)
 
 @end
 
@@ -55,6 +56,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
     viewControllerArray = [[NSMutableArray alloc]init];
     self.currentPageIndex = 0;
     self.isPageScrollingFlag = NO;
+    self.hasAppearedFlag = NO;
 }
 
 #pragma mark Customizables
@@ -134,8 +136,11 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 #pragma mark Setup
 
 -(void)viewWillAppear:(BOOL)animated {
-    [self setupPageViewController];
-    [self setupSegmentButtons];
+    if (!self.hasAppearedFlag) {
+        [self setupPageViewController];
+        [self setupSegmentButtons];
+        self.hasAppearedFlag = YES;
+    }
 }
 
 //%%% generic setup stuff for a pageview controller.  Sets up the scrolling style and delegate for the controller
