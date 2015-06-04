@@ -235,14 +235,13 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSInteger index = [self indexOfController:viewController];
+    NSInteger index = [viewControllerArray indexOfObject:viewController];
 
     if ((index == NSNotFound) || (index == 0)) {
         return nil;
@@ -253,7 +252,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSInteger index = [self indexOfController:viewController];
+    NSInteger index = [viewControllerArray indexOfObject:viewController];
 
     if (index == NSNotFound) {
         return nil;
@@ -268,21 +267,8 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
-        self.currentPageIndex = [self indexOfController:[pageViewController.viewControllers lastObject]];
+        self.currentPageIndex = [viewControllerArray indexOfObject:[pageViewController.viewControllers lastObject]];
     }
-}
-
-
-//%%% checks to see which item we are currently looking at from the array of view controllers.
-// not really a delegate method, but is used in all the delegate methods, so might as well include it here
--(NSInteger)indexOfController:(UIViewController *)viewController {
-    for (int i = 0; i<[viewControllerArray count]; i++) {
-        if (viewController == [viewControllerArray objectAtIndex:i])
-        {
-            return i;
-        }
-    }
-    return NSNotFound;
 }
 
 #pragma mark - Scroll View Delegate
