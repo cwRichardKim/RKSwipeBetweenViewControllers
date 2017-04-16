@@ -7,13 +7,13 @@ __Please check the .h to see how to customize anything__
 
 [Support](http://cwrichardkim.com)
 
-##Pod
+## Pod
 You should not use the pod in most cases, as they don't allow for customizability.  I would recommend dragging the .h and .m files manually into your project
 	
 	pod 'RKSwipeBetweenViewControllers'
 	
 
-##Updates, Questions, and Requests
+## Updates, Questions, and Requests
 [twitter](https://twitter.com/cwRichardKim) <--- I am a very light twitterer, so I won't spam you
 
 ## Demo: 
